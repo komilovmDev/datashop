@@ -1,0 +1,763 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ product.title }} |
+{% endblock %}
+
+{% block content %}
+    <!-- bread start-->
+    <div class="brator-breadcrumb-area shop-two-brad">
+        <div class="container-xxxl container-xxl container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="brator-breadcrumb">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            {% comment %} {% if product.category.parent %}
+                                <li><a href="#">{{ product.category.parent.name }} </a></li>
+                            {% endif %} {% endcomment %}
+                            <li><a href="#">{{ product.category.name }} </a></li>
+                            <li><a href="#">{{ product.title }} </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bread end-->
+    <div id="productapp">
+        <div class="brator-product-header-layout-area desing-two">
+            <div class="container-xxxl container-xxl container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="brator-product-header-layout">
+                            <div class="brator-product-header-layout-img">
+                                <div class="brator-product-img-tab-list js-tabs" id="tabs-product-img">
+                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /></div>
+                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/product-tab-img-02.jpeg" alt="alt" /></div>
+                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/product-tab-img-03.jpeg" alt="alt" /></div>
+                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/product-tab-img-04.jpeg" alt="alt" /></div>
+                                    <div class="brator-product-img-tab-header js-tabs__header">
+                                        <ul>
+                                            <li><a class="js-tabs__title lazyload" href="#" data-bg="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}"></a></li>
+                                            <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-02.jpeg"></a></li>
+                                            <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-03.jpeg"></a></li>
+                                            <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-04.jpeg"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="brator-product-layout-header-content">
+                                <div class="brator-product-hero-content">
+                                    <div class="brator-product-hero-content-info">
+                                        <div class="brator-product-hero-content-brand"><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></div>
+                                        <div class="brator-product-hero-content-title">
+                                            <h2>{{ product.title }}</h2>
+                                        </div>
+                                        <div class="brator-product-hero-content-review">
+                                            <div class="product-batch off-batch">new</div>
+                                            <div class="brator-review-product">
+                                                <div class="brator-review">
+                                                    <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                        <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                    </svg>
+                                                    <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                        <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                    </svg>
+                                                    <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                        <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                    </svg>
+                                                    <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                        <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                    </svg>
+                                                    <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                        <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="brator-review-text">
+                                                    <p>14 Reviews</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-hero-content-stock">
+                                            <h6>Sotuvda Mavjud</h6>
+                                        </div>
+                                        {% comment %} <div class="brator-product-hero-content-excerpt">
+                                            {% if product.description %}
+                                                <p>{{ product.description|truncatewords:10| safe }}</p>
+                                            {% endif %}
+                                        </div> {% endcomment %}
+                                        <div class="brator-product-hero-content-alert-box" v-if="showMessage">
+                                            {% comment %} <svg class="bi bi-x-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
+                                            </svg> {% endcomment %}
+                                            <div class="brator-product-hero-content-alert-box-content">
+                                                {% comment %} <p>This product not fit for your vehicle</p><span>( Mercedes-Benz GLC 300 4Matic 4Cyl 2.0L )</span><a href="#_">View Correc Part</a><a href="#_">Change Vehicle</a> {% endcomment %}
+                                                <h3><p>🛒 Maxsulot savatga qoshildi!</p></h3>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-light-info-area">
+                                            <div class="brator-product-single-light-info-share">
+                                                <svg id="lni_lni-map-marker" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" xml:space="preserve">
+                                                    <g>
+                                                        <path d="M32,1.3c-13.9,0-25.3,11-25.3,24.4c0,10.7,15.3,28.4,21.9,35.6c0.9,1,2.1,1.5,3.4,1.5c1.3,0,2.5-0.5,3.4-1.5                        c6.6-7.1,21.9-24.9,21.9-35.6C57.3,12.2,45.9,1.3,32,1.3z M32.8,58.9c-0.5,0.5-1.2,0.5-1.6,0c-4.9-5.3-21-23.5-21-33.2                        C10.2,14.1,20,4.8,32,4.8s21.8,9.4,21.8,20.9C53.8,35.4,37.7,53.5,32.8,58.9z"></path>
+                                                        <path d="M32,15.7c-5.9,0-10.8,4.8-10.8,10.8c0,5.9,4.8,10.8,10.8,10.8s10.8-4.8,10.8-10.8C42.8,20.5,37.9,15.7,32,15.7z M32,33.7                        c-4,0-7.3-3.3-7.3-7.3c0-4,3.3-7.3,7.3-7.3c4,0,7.3,3.3,7.3,7.3C39.3,30.4,36,33.7,32,33.7z"></path>
+                                                    </g>
+                                                </svg>
+                                                <p><span>Ship to</span> North Hills, CA 91343</p>
+                                            </div>
+                                            <div class="brator-product-single-light-info">
+                                                <div class="brator-product-single-light-info-s">
+                                                    <h5>Kategoriya: </h5><a href="#"</a>
+                                                </div>
+                                                <div class="brator-product-single-light-info-s">
+                                                    <h5>Part Number: </h5><span>WS5-451A2</span>
+                                                </div>
+                                                <div class="brator-product-single-light-info-s">
+                                                    <h5>Part Number: </h5><a href="#_">WS5-451A2</a>
+                                                </div>
+                                                <div class="brator-product-single-light-info-s">
+                                                    <h5>Tags:</h5><a href="#_">wheels</a><a href="#_">tires</a><a href="#_">rims</a><a href="#_">sliver</a><a href="#_">mercedes</a><a href="#_">glc</a>
+                                                </div>
+                                                <div class="brator-product-single-light-info-s">
+                                                    <h5>SKU:</h5><span>2513A - 601</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="brator-product-add-to-cart">
+                                    <div class="brator-product-add-to-cart-price">
+                                        <h6><span class="sale">${{ product.price }}</span><span class="old">$26.99</span></h6>
+                                    </div>
+                                    <div class="brator-product-add-to-cart-color">
+                                        <h6>без НДС</h6><span>Black/Red</span>
+                                    </div>
+                                    {% comment %} <div class="brator-product-add-to-cart-color-checkbox">
+                                        <div class="brator-product-add-to-cart-color-checkbox-single red">
+                                            <input type="checkbox" name="condcion" />
+                                            <div class="arow-check-right"></div>
+                                        </div>
+                                        <div class="brator-product-add-to-cart-color-checkbox-single blue">
+                                            <input type="checkbox" name="condcion" />
+                                            <div class="arow-check-right"></div>
+                                        </div>
+                                        <div class="brator-product-add-to-cart-color-checkbox-single green">
+                                            <input type="checkbox" name="condcion" />
+                                            <div class="arow-check-right"></div>
+                                        </div>
+                                        <div class="brator-product-add-to-cart-color-checkbox-single yellow">
+                                            <input type="checkbox" name="condcion" />
+                                            <div class="arow-check-right"></div>
+                                        </div>
+                                    </div> {% endcomment %}
+                                    <form action="#" method="post">
+                                        <div class="brator-product-add-to-cart-quanty">
+                                            {% comment %} {{ cart_product_form }} {% endcomment %}
+                                            {% csrf_token %}
+                                        </div>
+                                    </form>
+                                    <div class="brator-product-add-to-cart-button-added">
+                                        <button @click="addToCart({{ product.id }})" type="submit">Add To Cart</button> 
+                                        {% comment %} <input type="submit" value="Add to cart"> {% endcomment %}
+                                    </div>
+                                    <div class="brator-product-single-cart-action">
+                                        <div class="brator-product-single-cart-wish">
+                                            <button>
+                                                <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
+                                                </svg><span>Add to Wishlist</span>
+                                            </button>
+                                        </div>
+                                        <div class="brator-product-single-cart-compare">
+                                            <button>
+                                                <svg class="bi bi-arrow-left-right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"></path>
+                                                </svg><span>Compare</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-add-to-cart-quanty">
+                                        <h6>Guaranteed Safe Checkout</h6><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/payment.png" alt="as" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="brator-plan-pixel-area">
+            <div class="container-xxxl container-xxl container">
+                <div class="col-12">
+                    <div class="plan-pixel-area"></div>
+                </div>
+            </div>
+        </div>
+        <div class="brator-product-single-tab-area design-two">
+            <div class="container-xxxl container-xxl container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="brator-product-single-tab-list js-tabs side-tabbar" id="tabs-product-content">
+                            <div class="brator-product-single-tab-header js-tabs__header">
+                                <ul>
+                                    <li><a class="js-tabs__title" href="#">Description </a></li>
+                                    <li><a class="js-tabs__title" href="#">Specification </a></li>
+                                    <li><a class="js-tabs__title" href="#">Reviews (14) </a></li>
+                                    <li><a class="js-tabs__title" href="#">Product Q&A</a></li>
+                                </ul>
+                            </div>
+                            <div class="js-tabs__content brator-product-single-tab-item">
+                                {% if product.description %}
+                                    {{ product.description|linebreaks }}
+                                {% endif %}
+                            </div>
+                            <div class="js-tabs__content brator-product-single-tab-item">
+                                <p>pug</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="brator-plan-pixel-area">
+            <div class="container-xxxl container-xxl container">
+                <div class="col-12">
+                    <div class="plan-pixel-area"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bread start-->
+    <div class="brator-deal-product-slider recently-view">
+        <div class="container-xxxl container-xxl container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brator-section-header">
+                        <div class="brator-section-header-title">
+                            <h2>You May Also Like</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="brator-product-slider splide js-splide p-splide" data-splide='{"pagination":false,"type":"loop","perPage":5,"perMove":"1","gap":30, "breakpoints":{ "520" :{ "perPage": "1" },"746" :{ "perPage": "2" }, "768" :{ "perPage" : "3" }, "1090":{ "perPage" : "3" }, "1366":{ "perPage" : "4" }, "1500":{ "perPage" : "4" }, "1920":{ "perPage" : "5" }}}'>
+                        <div class="splide__arrows style-two">
+                            <button class="splide__arrow splide__arrow--prev">
+                                <svg class="bi bi-chevron-right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                                </svg>
+                            </button>
+                            <button class="splide__arrow splide__arrow--next">
+                                <svg class="bi bi-chevron-right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="splide__track">
+                            <div class="splide__list">
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="yollow-batch">New</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/wheel-01.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Brakepro</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Evolution Sport Drilled and Slotted Brake Kit</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="stock-out-batch">Out OF stock</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/wheel-02.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Machelin</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Universal 12 V Mini Tire Air Compressor</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="off-batch">20% OFF</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/wheel-03.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Brake oil</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Simple Leather Steering Wheel</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="off-batch">20% OFF</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/wheel-04.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">onwheel</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Carnauba Wash and Wax 64 oz by Norer</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="off-batch">20% OFF</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/wheel-05.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">onwheel</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Carnauba Wash and Wax 64 oz by Norer</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bread end-->
+    <div class="brator-plan-pixel-area">
+        <div class="container-xxxl container-xxl container">
+            <div class="col-12">
+                <div class="plan-pixel-area"></div>
+            </div>
+        </div>
+    </div>
+    <!-- bread start-->
+    <div class="brator-deal-product-slider recently-view">
+        <div class="container-xxxl container-xxl container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brator-section-header">
+                        <div class="brator-section-header-title">
+                            <h2>Recently Viewed</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="brator-product-slider splide js-splide p-splide" data-splide='{"pagination":false,"type":"loop","perPage":5,"perMove":"1","gap":30, "breakpoints":{ "520" :{ "perPage": "1" },"746" :{ "perPage": "2" }, "767" :{ "perPage" : "2" }, "1090":{ "perPage" : "3" }, "1366":{ "perPage" : "4" }, "1500":{ "perPage" : "4" }, "1920":{ "perPage" : "5" }}}'>
+                        <div class="splide__arrows style-two">
+                            <button class="splide__arrow splide__arrow--prev">
+                                <svg class="bi bi-chevron-right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                                </svg>
+                            </button>
+                            <button class="splide__arrow splide__arrow--next">
+                                <svg class="bi bi-chevron-right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="splide__track">
+                            <div class="splide__list">
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="yollow-batch">New</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/product-06.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Brakepro</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Evolution Sport Drilled and Slotted Brake Kit</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="stock-out-batch">Out OF stock</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/product-02.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Machelin</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Universal 12 V Mini Tire Air Compressor</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="off-batch">20% OFF</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/product-03.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Brake oil</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Simple Leather Steering Wheel</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="off-batch">20% OFF</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/product-04.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">onwheel</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Carnauba Wash and Wax 64 oz by Norer</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                                <div class="brator-product-single-item-area splide__slide design-two">
+                                    <div class="brator-product-single-item-info info-content-left">
+                                        <div class="brator-product-single-item-info-left">
+                                            <div class="off-batch">20% OFF</div>
+                                        </div>
+                                    </div>
+                                    <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/product-05.jpg" alt="alt" /></a></div>
+                                    <div class="brator-product-single-item-mini">
+                                        <div class="brator-product-single-item-cat"><a href="product-layout-01.html">onwheel</a></div>
+                                        <div class="brator-product-single-item-title">
+                                            <h5><a href="#_"> Carnauba Wash and Wax 64 oz by Norer</a></h5>
+                                        </div>
+                                        <div class="brator-product-single-item-review">
+                                            <div class="brator-review">
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                                <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                    <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="brator-review-text">
+                                                <p>14 Reviews</p>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-price">
+                                            <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                        </div>
+                                        <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bread end-->
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        var productapp = new Vue({
+            el: '#productapp',
+            delimiters: ['[[', ']]'],
+            /* store: store,*/
+            data () {
+                return {
+                    showMessage: false
+                }
+            },
+            mounted() {
+                console.log("Mounted");
+            },
+            methods: {
+                addToCart(product_id) {
+                    console.log('Product_id', product_id);
+
+                    var data = {
+                        'product_id': product_id, 
+                        'update': false,
+                        'quantity': 1
+                    };
+
+                    fetch('/api/add_to_cart/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': '{{ csrf_token }}',
+                        },
+                        credentials: 'same-origin',
+                        body: JSON.stringify(data)
+                    })
+                    .then((response) => {
+                        console.log(response)
+
+                        this.showMessage = true
+
+                        store.commit('increment', 1);
+
+                        setTimeout(() => {
+                            this.showMessage = false
+                        }, 2000)                        
+                    })
+                    .catch(function (error) {
+                        console.log('Error 2');
+                        console.log(error);
+                    })
+                }
+            }
+        });
+    </script>
+{% endblock %}

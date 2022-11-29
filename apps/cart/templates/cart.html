@@ -1,0 +1,572 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Savat |
+{% endblock %}
+
+{% block content %}
+    <div id="cartapp">
+        {% comment %} <section class="brator-megasell-area">
+            <div class="container container-xxxl container-xxl">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <h1>Your shopping cart</h1>
+                        <table class="cart">
+                            <thead>
+                                <tr>
+                                <th>Image</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Remove</th>
+                                <th>Unit price</th>
+                                <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in cart %}
+                                    {% with product=item.product %}
+                                        <tr>
+                                            <td>
+                                                <a href="{{ product.get_absolute_url }}">
+                                                    <img src="{% if product.image %}{{ product.image.url}}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                                                </a>
+                                            </td>
+                                            <td>{{ product.name }}</td>
+                                            <td>{{ item.quantity }}</td>
+                                            <td>
+                                                <form action="{% url "cart:cart_remove" product.id %}"method="post">
+                                                    <input type="submit" value="Remove">
+                                                    {% csrf_token %}
+                                                </form>
+                                            </td>
+                                            <td class="num">${{ item.price }}</td>
+                                            <td class="num">${{ item.total_price }}</td>
+                                        </tr>
+                                    {% endwith %}
+                                {% endfor %}
+                            </tbody>         
+                        </table>                
+                    </div>            
+                </div>
+            </div>
+        </section>  {% endcomment %}
+
+        <!-- bread start-->
+        <div class="brator-breadcrumb-area">
+            <div class="container-xxxl container-xxl container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="brator-breadcrumb">
+                            <ul>
+                                <li><a href="#_">Home</a></li>
+                                <li class="active-link">Xarid savatchasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bread end-->
+        <div class="brator-cart-header-area">
+            <div class="container-xxxl container-xxl container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3>Xarid Savatchasi</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="brator-cart-area">
+            <div class="container-xxxl container-xxl container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-12">
+                        <div class="brator-cart-info">
+                            {% if cart %}
+                                <div class="brator-cart-h">
+                                    <h3>Sizning savatingiz</h3>
+                                </div>
+                                <div v-if="products.length > 0">
+                                    <div class="brator-cart-list">
+                                        
+                                            <div class="brator-cart-list-items title-me">
+                                                <div class="brator-cart-list-items-title">
+                                                    <h6>MAHSULOT</h6>
+                                                </div>
+                                                <div class="brator-cart-list-items-price">
+                                                    <h6>NARX</h6>
+                                                </div>
+                                                <div class="brator-cart-list-items-qty-area">
+                                                    <h6>miqdor</h6>
+                                                </div>
+                                                <div class="brator-cart-list-items-subtotal">
+                                                    <h6>oraliq summa</h6>
+                                                </div>
+                                                <div class="brator-cart-list-items-removed"></div>
+                                            </div>
+
+                                            <div v-for="product in products" class="brator-cart-list-items">
+                                                <div class="brator-cart-list-items-title">
+                                                    <div class="img-cart">
+                                                        <a href="#"><img class="lazyload" src="[[ product.image ]]" alt="alt" /></a>
+                                                    </div>
+                                                    <div class="prodct-info">
+                                                        <h5><a href="#_">[[ product.title ]]</a></h5>
+                                                        <p>19” DIAMETER (19” x 8.5”), White/Sliver</p><a href="#_">Edit </a>
+                                                    </div>
+                                                </div>
+                                                <div class="brator-cart-list-items-price">
+                                                    <p><sup>[[ product.price ]]so'm</sup><b class="pub">$1000</b></p>
+                                                </div>
+                                                <div class="brator-cart-list-items-qty-area">
+                                                    
+                                                    
+                                                    <div class="brator-cart-list-items-qty">
+                                                        <button @click="decrementQuantity(product.id, product.quantity, product.price)" class="decrement-count-qty">-</button>
+                                                        <span style="margin-left:40px;">[[ product.quantity ]]</span>
+                                                        <button @click="incrementQuantity(product.id, product.quantity, product.price)" class="add-count-qty">+</button>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="brator-cart-list-items-subtotal">
+                                                    <p>[[ product.total_price ]]so'm</p>
+                                                </div>
+                                                
+                                                    <div class="brator-cart-list-items-removed">
+                                                        <button type="submit" @click="removeFromCart(product.id)">
+                                                            <svg class="bi bi-x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                                                            </svg>
+                                                        </button>
+                                                    
+                                                    </div>
+                                            </div>
+                                        
+                                    </div>
+                                </div>    
+                            {% else %}
+                                <div v-else class="brator-cart-h">
+                                    <h3>Sizning savatingiz BO'SH</h3>
+                                </div>
+                            {% endif %}
+                            <div class="brator-cart-checkout">
+                                <div class="brator-cart-checkout-left">
+                                    <div class="brator-cart-checkout-fields">
+                                        <input type="text" placeholder="Kupon kodini kiriting" />
+                                        <button>Kupon qollash</button>
+                                    </div>
+                                </div>
+                                <div class="brator-cart-checkout-right">
+                                    <div class="brator-cart-checkout-back"><a href="#_"> Davom Etish</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer top one start-->
+                        <div class="brator-forget-product-slider">
+                            <div class="brator-section-header">
+                                <div class="brator-section-header-title">
+                                    <h2>Nimanidir unitmadingizmi?</h2>
+                                </div>
+                            </div>
+                            <div class="brator-product-slider splide js-splide p-splide" data-splide='{"pagination":false,"type":"loop","perPage":4,"perMove":"1","gap":30, "breakpoints":{ "620" :{ "perPage": "1" },"991" :{ "perPage": "2" }, "1030" :{ "perPage" : "3" }, "1199":{ "perPage" : "4" }, "1500":{ "perPage" : "3" }, "1600":{ "perPage" : "4" }, "1599":{ "perPage" : "3" }, "1920":{ "perPage" : "4" }}}'>
+                                <div class="splide__arrows style-one">
+                                    <button class="splide__arrow splide__arrow--prev">
+                                        <svg class="bi bi-chevron-right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="splide__arrow splide__arrow--next">
+                                        <svg class="bi bi-chevron-right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="splide__track">
+                                    <div class="splide__list">
+                                        <div class="brator-product-single-item-area splide__slide design-two">
+                                            <div class="brator-product-single-item-info info-content-left">
+                                                <div class="brator-product-single-item-info-left">
+                                                    <div class="yollow-batch">Yangi</div>
+                                                </div>
+                                            </div>
+                                            <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/product-01.jpg" alt="alt" /></a></div>
+                                            <div class="brator-product-single-item-mini">
+                                                <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Brakepro</a></div>
+                                                <div class="brator-product-single-item-title">
+                                                    <h5><a href="#_"> Evolution Sport Drilled and Slotted Brake Kit</a></h5>
+                                                </div>
+                                                <div class="brator-product-single-item-review">
+                                                    <div class="brator-review">
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="brator-review-text">
+                                                        <p>14 Reviews</p>
+                                                    </div>
+                                                </div>
+                                                <div class="brator-product-single-item-price">
+                                                    <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                                </div>
+                                                <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-area splide__slide design-two">
+                                            <div class="brator-product-single-item-info info-content-left">
+                                                <div class="brator-product-single-item-info-left">
+                                                    <div class="stock-out-batch">Out OF stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/product-02.jpg" alt="alt" /></a></div>
+                                            <div class="brator-product-single-item-mini">
+                                                <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Machelin</a></div>
+                                                <div class="brator-product-single-item-title">
+                                                    <h5><a href="#_"> Universal 12 V Mini Tire Air Compressor</a></h5>
+                                                </div>
+                                                <div class="brator-product-single-item-review">
+                                                    <div class="brator-review">
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="brator-review-text">
+                                                        <p>14 Reviews</p>
+                                                    </div>
+                                                </div>
+                                                <div class="brator-product-single-item-price">
+                                                    <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                                </div>
+                                                <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-area splide__slide design-two">
+                                            <div class="brator-product-single-item-info info-content-left">
+                                                <div class="brator-product-single-item-info-left">
+                                                    <div class="off-batch">20% OFF</div>
+                                                </div>
+                                            </div>
+                                            <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/product-03.jpg" alt="alt" /></a></div>
+                                            <div class="brator-product-single-item-mini">
+                                                <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Brake oil</a></div>
+                                                <div class="brator-product-single-item-title">
+                                                    <h5><a href="#_"> Simple Leather Steering Wheel</a></h5>
+                                                </div>
+                                                <div class="brator-product-single-item-review">
+                                                    <div class="brator-review">
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="brator-review-text">
+                                                        <p>14 Reviews</p>
+                                                    </div>
+                                                </div>
+                                                <div class="brator-product-single-item-price">
+                                                    <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                                </div>
+                                                <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="brator-product-single-item-area splide__slide design-two">
+                                            <div class="brator-product-single-item-info info-content-left">
+                                                <div class="brator-product-single-item-info-left">
+                                                    <div class="off-batch">20% OFF</div>
+                                                </div>
+                                            </div>
+                                            <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="assets/images/shop/product-04.jpg" alt="alt" /></a></div>
+                                            <div class="brator-product-single-item-mini">
+                                                <div class="brator-product-single-item-cat"><a href="product-layout-01.html">Premiumwheel</a></div>
+                                                <div class="brator-product-single-item-title">
+                                                    <h5><a href="#_"> Carnauba Wash and Wax 64 oz by Norer</a></h5>
+                                                </div>
+                                                <div class="brator-product-single-item-review">
+                                                    <div class="brator-review">
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                        <svg class="d-active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                            <path d="M59.7,23.9l-18.1-2.8L33.4,3.9c-0.6-1.2-2.2-1.2-2.8,0l-8.2,17.3L4.4,23.9c-1.3,0.2-1.8,1.9-0.8,2.8l13.1,13.5l-3.1,18.9  c-0.2,1.3,1.1,2.4,2.3,1.6l16.3-8.9l16.2,8.9c1.1,0.6,2.5-0.4,2.2-1.6l-3.1-18.9l13.1-13.5C61.4,25.8,61,24.1,59.7,23.9z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="brator-review-text">
+                                                        <p>14 Reviews</p>
+                                                    </div>
+                                                </div>
+                                                <div class="brator-product-single-item-price">
+                                                    <p><sub>$172.96</sub><b class="pub">$100</b></p>
+                                                </div>
+                                                <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer top one end-->
+                        <!-- Footer top one start-->
+                        <div class="brator-app-content-area" style="background-image:url(./assets/images/app-bg-01.png)">
+                            <div class="brator-app-content">
+                                <h2>Data Shop<br />Ilovasida tezroq xarid qilin</h2>
+                                <p>Ilovamizni bugun yuklab oling va sinab ko'ring</p>
+                            </div>
+                            <div class="brator-app-btn"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/apple.png" alt="alt" /></a><a href="#_"><img src="./assets/images/google.png" alt="alt" /></a></div>
+                        </div>
+                        <!-- Footer top one end-->
+                    </div>
+                    <div class="col-xl-4 col-lg-5 col-md-7 col-12">
+                        <div class="cart-total-area" style="background-image:url(./assets/images/cat-bg.png)">
+                            <div class="cart-total-header">
+                                <h2>Jami<span>([[ numItems ]]ta maxsulot)</span></h2>
+                            </div>
+                            <div class="cart-total-cost">
+                                <div class="cart-total-before-dis item-ditels-cart-total">
+                                    <p>Chegirma oldidan jami</p><span>$843.19</span>
+                                </div>
+                                <div class="cart-total-dis item-ditels-cart-total">
+                                    <p>Chegirma</p><span>- 0.00so'm</span>
+                                </div>
+                                <div class="cart-total-subtotal item-ditels-cart-total">
+                                    <p>Subtotal</p><span>$838.19</span>
+                                </div>
+                            </div>
+                            <div class="cart-total-shiping">
+                                <select name="cost">
+                                    <option value=" Standard Shipping ($20)">Standard Shipping </option>
+                                    <option value=" Standard Shipping ($20)">Standard Shipping</option>
+                                    <option value=" Standard Shipping ($20)">Standard Shipping </option>
+                                </select>
+                            </div>
+                            <div class="cart-total-amount">
+                                <p>Jami</p><span>[[ totalCost ]]so'm</span>
+                            </div>
+                            <div class="cart-total-process">
+                                <button>Toʻlovga oʻtish</button>
+                            </div>
+                            <div class="cart-total-accpect-payment">
+                                <p>To'lov usullarini qabul qiling</p>
+                                <div class="list-img-pay"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/footer/paypal.png" alt="logo" /></a><a href="#_"><img src="./assets/images/footer/master.png" alt="logo" /></a><a href="#_"><img src="./assets/images/footer/visa.png" alt="logo" /></a><a href="#_"><img src="./assets/images/footer/stripe.png" alt="logo" /></a><a href="#_"><img src="./assets/images/footer/klarna.png" alt="logo" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var productapp = new Vue({
+        el: '#cartapp',
+        delimiters: ['[[', ']]'],
+        store: store,
+        data () {
+            return {
+                first_name: '',
+                last_name: '',
+                email: '',
+                address: '',
+                zipcode: '',
+                place: '',
+                products: [{{ productsstring|safe }}]
+            }
+        },
+        computed: {
+            numItems: function() {
+                return store.state.numItems
+            },
+            totalCost: function() {
+                return store.state.totalCost
+            }
+        },
+        methods: {
+            submitForm() {
+                console.log('Submit form');
+
+                var data = {
+                    'first_name': this.first_name,
+                    'last_name': this.last_name,
+                    'email': this.email,
+                    'address': this.address,
+                    'zipcode': this.zipcode,
+                    'place': this.place
+                };
+
+                fetch('/api/checkout/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+                    credentials: 'same-origin',
+                    body: JSON.stringify(data)
+                })
+                .then((response) => {
+                    console.log('Success');
+                    console.log(response);
+
+                    window.location.href = '/';
+                })
+                .catch(function (error) {
+                    console.log('Error 2');
+                    console.log(error);
+                })
+            },
+            incrementQuantity(product_id, quantity, price) {
+                console.log('Product_id:', product_id);
+
+                var data = {
+                    'product_id': product_id, 
+                    'update': true,
+                    'quantity': parseInt(quantity) + 1
+                };
+
+                store.commit('increment', 1);
+                store.commit('changeTotalCost', parseFloat(price));
+                    
+                fetch('/api/add_to_cart/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+                    credentials: 'same-origin',
+                    body: JSON.stringify(data)
+                })
+                .then((response) => {
+                    console.log(response)
+
+                    for (var i = 0; i < this.products.length; i++) {
+                        var product = this.products[i];
+   
+                        if (product.id === product_id) {
+                            this.products[i].quantity = parseInt(this.products[i].quantity) + 1;
+                            this.products[i].total_price = parseInt(this.products[i].quantity) * parseFloat(this.products[i].price)
+                        }
+                    }
+                })
+                .catch(function (error) {
+                    console.log('Error 2');
+                    console.log(error);
+                })
+            },
+            decrementQuantity(product_id, quantity, price) {
+                console.log('Product_id:', product_id);
+
+                var data = {
+                    'product_id': product_id, 
+                    'update': true,
+                    'quantity': parseInt(quantity) - 1
+                };
+                    
+                if (parseInt(quantity) - 1 === 0) {
+                    this.removeFromCart(product_id);
+                } else {
+                    store.commit('increment', -1);
+                    store.commit('changeTotalCost', -parseFloat(price));
+                 
+                    fetch('/api/add_to_cart/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': '{{ csrf_token }}'
+                        },
+                        credentials: 'same-origin',
+                        body: JSON.stringify(data)
+                    })
+                    .then((response) => {
+                        console.log(response)
+
+                        for (var i = 0; i < this.products.length; i++) {
+                            var product = this.products[i];
+    
+                            if (product.id === product_id) {
+                                this.products[i].quantity = parseInt(this.products[i].quantity) - 1;
+                                this.products[i].total_price = parseInt(this.products[i].quantity) * parseFloat(this.products[i].price)
+                            }
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log('Error 2');
+                        console.log(error);
+                    })
+                }
+            },
+            removeFromCart(product_id) {
+                console.log('Remove product_id:', product_id);
+
+                var data = {
+                    'product_id': product_id
+                };
+                    
+                fetch('/api/remove_from_cart/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+                    credentials: 'same-origin',
+                    body: JSON.stringify(data)
+                })
+                .then((response) => {
+                    console.log(response)
+
+                    this.products = this.products.filter(product => product.id !== product_id)
+                })
+                .catch(function (error) {
+                    console.log('Error 2');
+                    console.log(error);
+                })
+            }
+        }
+    });
+</script>
+{% endblock %}

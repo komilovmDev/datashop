@@ -1,0 +1,76 @@
+Todo(DataShop loyihasi uchun bajariladigan ishlar)1:
+	-- DONE Create a visual enviroment
+	-- DONE Install Djnago==3.1 and create a project
+	-- DONE Set up the database
+	-- DONE Create a superuser
+	-- DONE Create a folder for the django apps
+	-- DONE Create folder and Django app for the core views (apps/core)
+		-- DONE Create the base template
+	-- DONE Create view for the frontpage and a very basic template
+	-- DONE Check that everything is working
+
+
+Todo(DataShop loyihasi uchun bajariladigan ishlar)2:
+    -DONE Create folder and app for the store app
+    -DONE Get list of products and show on the front page
+    -DONE Show detail view for a product
+    -DONE Show categories in the menu
+    -DONE Show detail view for a category (Title and list related products)
+
+
+Todo(DataShop loyihasi uchun bajariladigan ishlar)3:
+    -DONE Create a footer and move "Contact" link down
+    -DONE Create an about page
+    -DONE Make it possible to set ordering for the categories
+    -DONE Add ordering to products, newest first
+    -DONE Only show featured products on the frontpage
+    -DONE Create folder and app for the cart
+    -DONE Create a view for the cart and show link in the menu
+
+
+Todo(DataShop loyihasi uchun bajariladigan ishlar)4:
+    -DONE Rename cart view to cart_detail
+    -DONE Add two settings for the cart in the settings file
+    -DONE Create a Cart class
+    -DONE Make it possible to add products to the cart
+    -DONE Make it possible to remove products from the cart
+
+
+Todo(DataShop loyihasi uchun bajariladigan ishlar)5:
+    -DONE Show quantity and price in the cart
+    -DONE Update quantity
+    -DONE More Vue.js in the cart (automatically remove products, etc)
+    -DONE Show cart in the menu (with quantity)
+
+
+Todo(DataShop loyihasi uchun bajariladigan ishlar)6:
+    -DONE Add product pictures (Thumbnails using Pillow)
+    -DONE Show total price for the whole cart
+    -DONE Create new app for orders
+    -DONE Set up order models
+    -DONE Decrement quantity
+
+
+Todo(DataShop loyihasi uchun bajariladigan ishlar)7:
+    -DONE Create context processor for the cart
+    -DONE Create new orders and clear cart
+    -DONE Create account at Stripe
+    -DONE Install stripe (pip)
+    -DONE Fix quantity below 1
+
+    
+Todo(DataShop loyihasi uchun bajariladigan ishlar)8:
+    -Integrate Stripe
+    -Stripe webhooks
+    -Checkout form validation
+
+
+Todo(DataShop loyihasi uchun bajariladigan ishlar)10:
+    -DONE Fix the upload problems (models.py)
+    -DONE Fix the image urls (category_detail, frontpage)
+    -DONE Product pictures in categories
+    -DONE Fix the get_total_cost (iterate over self)
+    -DONE Show message when product is added to cart
+    -DONE Changes to the Django admin interface
+
+    

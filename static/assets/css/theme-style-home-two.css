@@ -1,0 +1,483 @@
+/* Banner style two start */
+.brator-main-banner-area.banner-style-two {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.brator-main-banner-content{
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.brator-main-banner-content p{
+    font-size: 30px;
+    font-weight: 400;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.brator-main-banner-content h2{
+    font-size: 60px;
+    font-weight: 700;
+    color: #ffffff;
+}
+.brator-parts-search-box-area.search-box-with-banner.design-two{
+    background: transparent;
+    border-radius: 0px;
+}
+.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-header{
+    text-align: center;
+}
+.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-header h2 {
+    color: #ffffff;
+}
+.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-header p {
+    color: #ffffff;
+}
+.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-form{
+    border-color: transparent;
+    background-color: #ffffff;
+    border-radius: 8px 8px 0px 0px;
+}
+.brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-form select:disabled {
+    background-color: #f2f2f7;
+}
+/* Banner style two end */
+.brator-categories-list-area.design-two.categories-with-load-more.gray-bg{
+    padding: 75px 0;
+    background-color: #f2f2f7;
+}
+.brator-categories-list-area.categories-with-load-more .brator-section-header{
+    justify-content: center;
+}
+.brator-categories-list-area.categories-with-load-more .brator-section-header-title h2{
+    margin-right: 0px;
+}
+.brator-categories-list-area.categories-with-load-more .brator-categories-list{
+    justify-content: center;
+}
+.brator-categories-list-area.design-two .brator-categories-single{
+    background-color: #f5f5fa;
+}
+.brator-categories-list-area.design-two.categories-with-load-more .brator-categories-single{
+    background-color: #ffffff;
+}
+.brator-categories-list-load-more{
+    margin-top: 50px;
+    text-align: center;
+}
+.brator-categories-list-load-more .brator-categories-more-button{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    color: #000000;
+    padding: 15px 53px;
+    border-radius: 4px;
+    height: 52px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+.brator-categories-list-load-more .brator-categories-more-button:hover {
+    border-color: var(--color-high-dark);
+    color: var(--color-high-dark);
+}
+.brator-makes-list-area.design-two{
+    padding-top: 65px;
+    padding-bottom: 16px;
+}
+.brator-makes-list-area.design-two .brator-makes-list-tab-header ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+}
+.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li{
+    list-style: outside none;
+}
+.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a{
+    font-size: 30px;
+    font-weight: 400;
+    color: #999999;
+    margin: 0px 10px;
+    padding: 10px 0px;
+    position: relative;
+    display: inline-block;
+}
+.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a::after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.4s;
+    opacity: 0;
+}
+.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a.js-tabs__title.js-tabs__title-active{
+    color: #000000;
+    font-weight: 700;
+}
+.brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a.js-tabs__title.js-tabs__title-active::after{
+    width: 100%;
+    opacity: 1;
+}
+.brator-brand-item-area.design-three {
+    padding: 73px 0 47px;
+    background-color: #fff;
+}
+.brator-brand-item-area.design-three .brator-section-header{
+    justify-content: center;
+}
+.brator-brand-item-area.design-three .row {
+    justify-content: space-between;
+    align-items: center;
+}
+.brator-brand-item-area.design-three .brator-section-header h2{
+    margin-right: 0px;
+}
+.brator-brand-item-area.design-three .brator-brand-img a {
+    display: grid;
+    justify-content: center;
+    margin: 40px 0;
+}
+.brator-blog-featured-area .brator-section-header{
+    margin-bottom: 40px;
+}
+.brator-deal-product-slider.brator-best-seller{
+    background-color: #f2f2f7;
+    padding-top: 75px;
+    padding-bottom: 0px;
+}
+.brator-best-seller-section-header-area {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+.brator-best-seller-section-header-area .brator-section-header.all-item-left{
+    width: auto;
+    margin-bottom: 0px;
+}
+.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list{
+    list-style: outside none;
+}
+.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list a{
+    font-size: 14px;
+    padding: 0px 12px;
+    color: black;
+    font-weight: 600;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list a.active,
+.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list a:hover{
+    background-color: #ffffff;
+    color: #f73312;
+}
+.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list:last-child a {
+    padding-right: 0;
+}
+.brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list:last-child a:hover {
+    padding-right: 12px;
+}
+.brator-deal-product-slider.brator-best-seller .brator-product-slider .splide__list .brator-product-single-item-area.splide__slide.design-two, 
+.brator-deal-product-slider.brator-essential-items .brator-product-slider .splide__list .brator-product-single-item-area.splide__slide.design-two,
+.brator-deal-product-slider.brator-new-arrivals .brator-product-slider .splide__list .brator-product-single-item-area.splide__slide.design-two{
+    background-color: #ffffff;
+}
+.brator-product-single-item-area .brator-product-single-item-info .brator-product-single-item-info-left .brator-product-batch{
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 5px 10px;
+}
+.brator-product-batch.stock-number-batch{
+    background-color: #7faf2b;
+    color: white;
+}
+.brator-product-batch.stock-recommended-batch{
+    background-color: #0033cc;
+    color: white;
+}
+.brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-price p.brator-price-black-text sub{
+    color: #000000;
+}
+.brator-deal-product-slider.brator-essential-items{
+    background-color: #f2f2f7;
+    padding-top: 65px;
+    padding-bottom: 0px;
+}
+.brator-deal-product-slider.brator-new-arrivals {
+    background-color: #f2f2f7;
+    padding-top: 65px;
+    padding-bottom: 80px;
+}
+.brator-blog-featured-area.grid-type.design-two {
+    margin-top: 75px;
+    margin-bottom: 80px;
+}
+/* Brator whats hot area start */
+.brator-offer-slider-area.brator-whats-hot-area{
+    padding-top: 82px;
+    padding-bottom: 80px;
+}
+.brator-offer-slider-area.brator-whats-hot-area .brator-section-header{
+    justify-content: center;
+}
+.brator-offer-slider-area.brator-whats-hot-area .brator-section-header h2{
+    margin-right: 0px;
+}
+.brator-whats-hot-slider .brator-hot-single-box {
+    padding: 40px;
+    min-height: 450px;
+    height: 100%;
+    border-radius: 4px;
+}
+.brator-hot-single-box{
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brator-hot-box-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.brator-hot-box-design-one .brator-hot-box-content .brator-hot-box-text p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+}
+.brator-hot-box-design-one .brator-hot-box-content .brator-hot-box-text h2{
+    font-size: 35px;
+    line-height: 35px;
+    color: #000000;
+    text-transform: uppercase;
+}
+.brator-hot-single-box .brator-hot-box-content .brator-hot-box-button a{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 15px;
+    background: var(--color-high-dark);
+    border: 2px solid var(--color-high-dark);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 4px;
+    height: 40px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+.brator-hot-single-box .brator-hot-box-content .brator-hot-box-button a:hover {
+    color: #fff;
+    background: #000;
+    border: 2px solid #000;
+}
+.brator-hot-box-design-two .brator-hot-box-content .brator-hot-box-text h2{
+    font-size: 30px;
+    font-weight: 400;
+    color: #000000;
+}
+.brator-hot-box-design-two .brator-hot-box-content .brator-hot-box-text h2 span{
+    font-weight: 700;
+}
+.brator-hot-single-box .best-choise-batch{
+    background-color: #f8c600;
+    display: inline-flex;
+    padding: 0px 14px;
+    margin-top: 20px;
+}
+.brator-hot-single-box .best-choise-batch span {
+    font-size: 14px;
+    color: #003bd2;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.brator-hot-box-design-three .brator-hot-box-content .brator-hot-box-text p{
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    text-transform: uppercase;
+}
+.brator-hot-box-design-three .brator-hot-box-content .brator-hot-box-text h6{
+    font-size: 60px;
+    color: #f73312;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 11px;
+}
+.brator-hot-box-design-three .brator-hot-box-content .brator-hot-box-text h2{
+    font-size: 14px;
+    color: #000000;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+.brator-hot-box-design-four .brator-hot-box-content .brator-hot-box-text h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+.brator-hot-box-design-four .brator-hot-box-content .brator-hot-box-text p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.3em;
+}
+.best-choise-batch.best-use-code-batch{
+    background-color: #7faf2b;
+    margin-top: 5px;
+}
+.best-choise-batch.best-use-code-batch span{
+    font-weight: 300;
+    color:#ffffff;
+}
+.best-choise-batch.best-use-code-batch span.use-code-code{
+    font-weight: 700;
+}
+.best-use-code-batch .use-code-off {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.best-use-code-batch .use-code-off .use-code-separator{
+    opacity: .5;
+    padding: 0px 8px;
+}
+/* Brator whats hot area end */
+.brator-newsletter-area.design-one.design-for-home-two{
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+/* Brator home two responsive start */
+@media only screen and (min-width: 300px) and (max-width: 1399px) {}
+@media only screen and (min-width: 300px) and (max-width: 1199px) {
+    .brator-parts-search-box-area.design-two .brator-parts-search-box-form button {
+        width: calc(33.3333333% - 30px);
+        max-width: 262px;
+    }
+    .brator-best-seller-sub-filter-area {
+        margin-top: 10px;
+    }
+    .brator-best-seller-section-header-area {
+        display: inline-block;
+    }
+    .brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list:first-child a {
+        padding-left: 0;
+    }
+    .brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list:first-child a:hover {
+        padding-left: 12px;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 1030.98px) {
+    .brator-offer-slider-area.brator-whats-hot-area .splide__arrow {
+        display: none;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 991.98px) {
+    .brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-form select {
+        width: 100%;
+    }
+    .brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-form {
+        gap: 15px;
+    }
+    .brator-parts-search-box-area.search-box-with-banner.design-two .brator-parts-search-box-form button {
+        width: 100%;
+        max-width: unset;
+    }
+    .brator-offer-slider-area.brator-whats-hot-area .splide__arrow {
+        display: block;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 767.98px) {
+    .brator-main-banner-content h2 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .brator-main-banner-content p{
+        font-size: 25px;
+    }
+    .brator-makes-list-area.design-two .brator-makes-list-tab-header ul li a {
+        font-size: 16px;
+    }
+    .brator-best-seller-sub-filter-content {
+        flex-wrap: wrap;
+    }
+    .brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list{
+        width: 50%;
+    }
+    .brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list a{
+        padding: 0px 0px;
+        background-color: transparent;
+        font-size: 14px;
+        line-height: 32px;
+        color: #666666;
+        width: 100%;
+        font-weight: 400;
+    }
+    .brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list a:hover,
+    .brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list:first-child a:hover,
+    .brator-best-seller-sub-filter-area ul.brator-best-seller-sub-filter-content li.brator-best-seller-sub-filter-list:last-child a:hover{
+        padding: 0px 0px;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 615.98px) {
+    .brator-offer-slider-area.brator-whats-hot-area .splide__arrow {
+        display: none;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 576.98px) {
+    .brator-makes-list-area.design-two .brator-makes-list-tab-header ul {
+        flex-wrap: wrap;
+    }
+    .brator-makes-list-area.design-two .brator-makes-list-tab-header ul li:first-child a{
+        margin-bottom: 10px;
+    }
+    .brator-main-banner-content h2 {
+        font-size: 35px;
+        line-height: 40px;
+    }
+    .brator-main-banner-content p {
+        font-size: 20px;
+    }
+    .brator-parts-search-box-area.design-two .brator-parts-search-box-header h2 {
+        font-size: 25px;
+    }
+    .brator-parts-search-box-area.design-two .brator-parts-search-box-header p {
+        margin-bottom: 13px;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 567.98px) {}
+@media only screen and (min-width: 300px) and (max-width: 455.98px) {}
+@media only screen and (min-width: 300px) and (max-width: 425.98px) {}
+@media only screen and (min-width: 300px) and (max-width: 400.98px) {}
+
+@media only screen and (min-width: 300px) and (max-width: 767.98px){
+    .brator-banner-area.design-four .brator-banner-content h2 a {
+        font-size: 50px;
+        line-height: 60px;
+    }
+}

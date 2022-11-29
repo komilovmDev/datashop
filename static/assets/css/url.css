@@ -1,0 +1,73 @@
+.brator-megasell-area .splide__arrows .splide__arrow--next svg,
+.brator-megasell-area .splide__arrows .splide__arrow--prev svg,
+.brator-banner-slider-area .splide__arrows .splide__arrow--prev svg,
+.brator-banner-slider-area .splide__arrows .splide__arrow--next svg { 
+    font-size: 17px;
+    width: 1em;
+    height: 1em;
+}
+.brator-megasell-area .splide__arrows .splide__arrow--prev span:hover,
+.brator-banner-slider-area .splide__arrows .splide__arrow--prev span:hover{
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='red' class='bi bi-chevron-left' viewBox='0 0 16 16'> <path fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/> </svg>");
+}
+.brator-megasell-area .splide__arrows .splide__arrow--prev span,
+.brator-banner-slider-area .splide__arrows .splide__arrow--prev span{   
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-left' viewBox='0 0 16 16'> <path fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/> </svg>");
+    background-repeat: no-repeat;
+    background-position-x: 0%;
+    background-position-y: 49%;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    position: absolute;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    left: 0px;
+    top: 0;
+}
+.brator-megasell-area .splide__arrows .splide__arrow--next span:hover,
+.brator-banner-slider-area .splide__arrows .splide__arrow--next span:hover{
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='red' class='bi bi-chevron-left' viewBox='0 0 16 16'> <path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/> </svg>");
+}
+.brator-megasell-area .splide__arrows .splide__arrow--next span,  
+.brator-banner-slider-area .splide__arrows .splide__arrow--next span{   
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-left' viewBox='0 0 16 16'> <path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/> </svg>");
+    background-repeat: no-repeat;
+    background-position-x: 0%;
+    background-position-y: 49%;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    position: absolute;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    left: 10px;
+    top: 0;
+}
+.brator-megasell-area .splide__arrows .splide__arrow--prev,
+.brator-banner-slider-area .splide__arrows .splide__arrow--prev{
+    background: transparent;
+    width: 30px;
+    height: 118px;
+    opacity: 1;
+    left: -1px;
+}
+.brator-megasell-area .splide__arrows .splide__arrow--next,
+.brator-banner-slider-area .splide__arrows .splide__arrow--next{
+    background: transparent;
+    width: 30px;
+    height: 118px;
+    opacity: 1;
+    right: -1px;
+}
+
+
+

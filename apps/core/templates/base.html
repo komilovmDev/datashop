@@ -1,0 +1,637 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{%block title%}{% endblock %}Data Shop</title>
+    <!-- Meta Data        -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0 shrink-to-fit=no" />
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/png" />
+    <!-- Google Font-->
+    <link href="https://fonts.googleapis.com/css?display=swap&amp;family=Inter:300,400,500,600,700,800" rel="stylesheet" />
+    
+    <!-- bootstrap grid-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap-grid.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/splide.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/splide-core.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/nouislider.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/select2.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/lineicons.css' %}" />
+    <!-- Theme style-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme-style.css' %}" />
+    <!-- Theme style For Home Two-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme-style-home-two.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme-style-home-one.css' %}" />
+    <!--    <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" />-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/url.css' %}" />
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/appbar.css' %}" />
+
+    
+
+</head>
+<body class="boxed_wrapper ltr">
+    <div class="preloader-area">
+        <img src="{% static 'img/datalogo.png' %}" alt="Logo">
+    </div>
+    <!-- page-direction -->
+<!--
+    <div class="page_direction">
+        <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
+        <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
+    </div>
+-->
+    <!-- page-direction end -->
+
+    <div class="h-infobox__wrapper">
+        <div class="tt-header-holder h-infobox__popup">
+            <div class="brator-search-area">
+                <form class="search-form" role="search" method="get" action="/search/">
+                    <input class="search-field" type="search" placeholder="Katalog bo'yicha qidiring." name="query" required="required" />
+                    <button type="submit">
+                        <svg fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                            <path d="M62.1,57L44.6,42.8c3.2-4.2,5-9.3,5-14.7c0-6.5-2.5-12.5-7.1-17.1v0c-9.4-9.4-24.7-9.4-34.2,0C3.8,15.5,1.3,21.6,1.3,28                                c0,6.5,2.5,12.5,7.1,17.1c4.7,4.7,10.9,7.1,17.1,7.1c6.1,0,12.1-2.3,16.8-6.8l17.7,14.3c0.3,0.3,0.7,0.4,1.1,0.4                                c0.5,0,1-0.2,1.4-0.6C63,58.7,62.9,57.6,62.1,57z M10.8,42.7C6.9,38.8,4.8,33.6,4.8,28s2.1-10.7,6.1-14.6c4-4,9.3-6,14.6-6                                c5.3,0,10.6,2,14.6,6c3.9,3.9,6.1,9.1,6.1,14.6S43.9,38.8,40,42.7C32,50.7,18.9,50.7,10.8,42.7z"></path>
+                        </svg>
+                    </button>
+                </form>
+                <div class="search-quly">
+                    <p>Misol uchun:</p><a href="http://127.0.0.1:8080/search/?query=Iphone14">Iphone14</a><a href="http://127.0.0.1:8080/search/?query=Nvidia">Nvidia</a><a href="http://127.0.0.1:8080/search/?query=SSD">SSD</a><a href="http://127.0.0.1:8080/search/?query=Acer">Acer</a><a href="http://127.0.0.1:8080/search/?query=RTX3060">RTX3060</a><a href="http://127.0.0.1:8080/search/?query=Kitob">Kitob</a><a href="http://127.0.0.1:8080/search/?query=Televizor">Televizor</a>
+                </div>
+            </div>
+            {% comment %} <div class="brator-header-menu-info text-left"><a href="#_">Order Status</a><span>24/7 Support:</span><a class="phomeee" href="tel:">+998991234567</a></div> {% endcomment %}
+            <div class="brator-header-menu-info text-left"><a href="#_">☑️ Buyurtma Holati</a><span>📞 24/7 Yordam:</span><a class="phomeee" href="#_">+998(91)995-88-86</a></div>
+        </div>
+    </div>
+    <!-- Header one start-->
+    <div class="brator-header-top-bar-area design-one">
+        {% comment %} <div class="container-xxxl container-xxl container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brator-header-top-bar-info-left">
+                        <p><span class="c-ts">BLACK FRIDAY</span><span>: Discount up to</span><span class="c-ts">50%</span><span>use code</span><b>Brator50</b></p><a href="#_">See more</a>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+    </div>
+    <div class="brator-header-area header-one">
+        <div class="container-xxxl container-xxl container">
+            <div class="row">
+                <div class="col-lg-12 col-xl-3">
+                    <div class="brator-logo-area">
+                        <div class="brator-infobox__btn" id="infobox__toggle-js">
+                            <svg x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
+                                <g>
+                                    <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+                                        c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+                                        c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"></path>
+                                </g>
+                                <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                            </svg>
+                        </div>
+                        <div class="brator-logo"><a href="{% url 'frontpage' %}"><img class="lazyload" src="{% static 'img/datalogo.png' %}"  data-src="{% static 'img/datalogo.png' %}" alt="logo" /></a>
+                            <button>
+                                <svg class="bi bi-pause" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 xl-dextop-none">
+                    <div class="brator-search-area">
+                        <form class="search-form" role="search" method="get" action="/search/">
+                            <input class="search-field" type="search" placeholder="Katalog bo'yicha qidiring." name="query" required="required" />
+                            <button type="submit">
+                                <svg fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                    <path d="M62.1,57L44.6,42.8c3.2-4.2,5-9.3,5-14.7c0-6.5-2.5-12.5-7.1-17.1v0c-9.4-9.4-24.7-9.4-34.2,0C3.8,15.5,1.3,21.6,1.3,28                                c0,6.5,2.5,12.5,7.1,17.1c4.7,4.7,10.9,7.1,17.1,7.1c6.1,0,12.1-2.3,16.8-6.8l17.7,14.3c0.3,0.3,0.7,0.4,1.1,0.4                                c0.5,0,1-0.2,1.4-0.6C63,58.7,62.9,57.6,62.1,57z M10.8,42.7C6.9,38.8,4.8,33.6,4.8,28s2.1-10.7,6.1-14.6c4-4,9.3-6,14.6-6                                c5.3,0,10.6,2,14.6,6c3.9,3.9,6.1,9.1,6.1,14.6S43.9,38.8,40,42.7C32,50.7,18.9,50.7,10.8,42.7z"></path>
+                                </svg>
+                            </button>
+                        </form>
+                        <div class="search-quly">
+                            <p>Misol uchun:</p><a href="http://127.0.0.1:8000/search/?query=Iphone14">Iphone14</a><a href="http://127.0.0.1:8000/search/?query=Nvidia">Nvidia</a><a href="http://127.0.0.1:8000/search/?query=SSD">SSD</a><a href="http://127.0.0.1:8000/search/?query=Acer">Acer</a><a href="http://127.0.0.1:8000/search/?query=RTX3060">RTX3060</a><a href="http://127.0.0.1:8000/search/?query=Kitob">Kitob</a><a href="http://127.0.0.1:8000/search/?query=Televizor">Televizor</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xxl-4">
+                    <div class="brator-info-right">
+                        <div class="brator-icon-link-text"><a href="#_">
+                                {% comment %} <div class="click-item-count">
+                                    <svg fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                        <g>
+                                            <path d="M14.6,38h6.6c1,0,1.8-0.8,1.8-1.8s-0.8-1.8-1.8-1.8h-6.6c-1,0-1.8,0.8-1.8,1.8S13.6,38,14.6,38z"></path>
+                                            <path d="M41.9,38h6.6c1,0,1.8-0.8,1.8-1.8s-0.8-1.8-1.8-1.8h-6.6c-1,0-1.8,0.8-1.8,1.8S41,38,41.9,38z"></path>
+                                            <path d="M61,21.6h-3.4l-5-12.7C52,7.2,50.3,6,48.5,6H15.1c-1.8,0-3.4,1.1-4.1,2.8L6,21.6H3c-1,0-1.8,0.8-1.8,1.8S2,25.1,3,25.1h1.4    v17.8c0,2.6,2.1,4.7,4.6,4.7v5.6c0,2.6,2.1,4.8,4.8,4.8h4.4c2.6,0,4.8-2.1,4.8-4.8v-5.6h17.3v5.6c0,2.6,2.1,4.8,4.8,4.8h4.4    c2.6,0,4.8-2.1,4.8-4.8v-5.6h0.4c2.6,0,4.8-2.1,4.8-4.8V25.1H61c1,0,1.8-0.8,1.8-1.8S62,21.6,61,21.6z M14.3,10.1    c0.1-0.4,0.5-0.6,0.8-0.6h33.4c0.4,0,0.7,0.2,0.8,0.6l5.6,14.1H8.7L14.3,10.1z M19.4,53.3c0,0.7-0.6,1.3-1.3,1.3h-4.4    c-0.7,0-1.3-0.6-1.3-1.3v-5.6h6.9V53.3z M50.6,53.3c0,0.7-0.6,1.3-1.3,1.3h-4.4c-0.7,0-1.3-0.6-1.3-1.3v-5.6h6.9V53.3z M55.8,42.9    c0,0.7-0.6,1.3-1.3,1.3h-0.4H40.2H22.9H9.1c-0.7,0-1.3-0.6-1.3-1.3V27.6h47.9V42.9z"></path>
+                                        </g>
+                                    </svg>
+                                </div> {% endcomment %}
+                                {% comment %} <b>Add Vehicle</b> {% endcomment %}
+                            </a>
+                            <div class="vehicle-list-wapper">
+                                <form method="post" id="advanced-searchform" class="brator-parts-search-box-form">
+                                    <select class="select-year-parts brator-select-active" id="makeyear" name="makeyear">
+                                        <option value="">Year</option>
+                                        <option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option>		</select>
+                                    <select class="select-make-parts brator-select-active" id="makebrand" name="brand" disabled="">
+                                        <option value="">Make</option>
+                                        <option value="bosch">Bosch</option><option value="brigdestone">Brigdestone</option><option value="castrol">Castrol</option><option value="dorman">Dorman</option><option value="michelin">Michelin</option><option value="varta">Varta</option><option value="wruth">Wruth</option>		</select>
+                                    <select class="select-model-parts brator-select-active" id="makemodel" name="model" disabled="">
+                                        <option value="">Model</option>
+                                        <option value="a4-prestige">A4 Prestige</option><option value="a6-quattro-premium">A6 Quattro Premium</option><option value="cherokee">Cherokee</option><option value="city-express">City Express</option><option value="civic">Civic</option><option value="colorado">Colorado</option><option value="convertible">Convertible</option><option value="q7-premium">Q7 Premium</option>		</select>
+                                    <select class="select-engine-parts brator-select-active" id="makeengine" name="engine" disabled="">
+                                        <option value="">Engine</option>
+                                        <option value="camshaft">Camshaft</option><option value="crankshaft">Crankshaft</option><option value="gigabite">gigabite</option><option value="msi">Msi</option><option value="valves">Valves</option>		</select>
+                                    <button name="adv_brator_form" type="submit">Add Vehicle</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="brator-user-link"><a href="#_">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <path d="M32.1,37.3c-8.8,0-16-7.2-16-16s7.2-16,16-16s16,7.2,16,16S40.9,37.3,32.1,37.3z M32.1,10.7c-5.9,0-10.7,4.8-10.7,10.7                                    S26.3,32,32.1,32s10.7-4.8,10.7-10.7S38,10.7,32.1,10.7z"></path>
+                                        </g>
+                                        <g>
+                                            <path d="M2.8,58.7c-0.8,0-1.6-0.3-2.1-1.1c-1.1-1.1-0.8-2.9,0.3-3.7c8.8-7.2,19.7-11.2,31.2-11.2s22.4,4,30.9,11.2                                    c1.1,1.1,1.3,2.7,0.3,3.7c-1.1,1.1-2.7,1.3-3.7,0.3C52.1,51.5,42.3,48,32.1,48s-20,3.5-27.7,10.1C4.1,58.4,3.3,58.7,2.8,58.7z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                </a></div>
+                        <div class="brator-cart-link" id="navbarapp">
+                            {% comment %} {% with total_items=cart|length %}
+                                {% if total_items > 0 %}
+                                    <a href="{% url 'cart' %}">
+                                        <div class="brator-cart-icon click-item-count">
+                                            <svg fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                                <g>
+                                                    <path d="M40.9,48.2c-3.9,0-7.1,3.3-7.1,7.3c0,4,3.2,7.3,7.1,7.3s7.1-3.3,7.1-7.3C48.1,51.5,44.9,48.2,40.9,48.2z M40.9,59.3                                        c-2,0-3.6-1.7-3.6-3.8c0-2.1,1.6-3.8,3.6-3.8s3.6,1.7,3.6,3.8C44.6,57.6,42.9,59.3,40.9,59.3z"></path>
+                                                    <path d="M18.2,48.2c-3.9,0-7.1,3.3-7.1,7.3c0,4,3.2,7.3,7.1,7.3s7.1-3.3,7.1-7.3C25.4,51.5,22.2,48.2,18.2,48.2z M18.2,59.3                                        c-2,0-3.6-1.7-3.6-3.8c0-2.1,1.6-3.8,3.6-3.8s3.6,1.7,3.6,3.8C21.9,57.6,20.2,59.3,18.2,59.3z"></path>
+                                                    <path d="M57.8,1.3h-6.4c-1.5,0-2.8,1.1-3,2.6l-1.8,13.2H7.3c-0.9,0-1.7,0.4-2.2,1.1c-0.5,0.7-0.7,1.6-0.5,2.4c0,0,0,0.1,0,0.1                                        l6.1,18.9c0.3,1.2,1.4,2.1,2.8,2.1h29.5c2.2,0,4-1.6,4.3-3.8l4.6-33.2h6c1,0,1.8-0.8,1.8-1.8S58.8,1.3,57.8,1.3z M43.7,37.4                                        c-0.1,0.4-0.4,0.8-0.9,0.8h-29L8.1,20.6h37.9L43.7,37.4z"></path>
+                                                </g>
+                                            </svg><span>{{ total_items }}</span>
+                                        </div><b>${{ cart.get_total_price }}</b>
+                                    </a>
+                                {% else %}
+                                {% endif %}
+                                {% endwith %} {% endcomment %}
+                                <a href="{% url 'cart' %}">
+                                    <div class="brator-cart-icon click-item-count">
+                                        <svg fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                            <g>
+                                                <path d="M40.9,48.2c-3.9,0-7.1,3.3-7.1,7.3c0,4,3.2,7.3,7.1,7.3s7.1-3.3,7.1-7.3C48.1,51.5,44.9,48.2,40.9,48.2z M40.9,59.3                                        c-2,0-3.6-1.7-3.6-3.8c0-2.1,1.6-3.8,3.6-3.8s3.6,1.7,3.6,3.8C44.6,57.6,42.9,59.3,40.9,59.3z"></path>
+                                                <path d="M18.2,48.2c-3.9,0-7.1,3.3-7.1,7.3c0,4,3.2,7.3,7.1,7.3s7.1-3.3,7.1-7.3C25.4,51.5,22.2,48.2,18.2,48.2z M18.2,59.3                                        c-2,0-3.6-1.7-3.6-3.8c0-2.1,1.6-3.8,3.6-3.8s3.6,1.7,3.6,3.8C21.9,57.6,20.2,59.3,18.2,59.3z"></path>
+                                                <path d="M57.8,1.3h-6.4c-1.5,0-2.8,1.1-3,2.6l-1.8,13.2H7.3c-0.9,0-1.7,0.4-2.2,1.1c-0.5,0.7-0.7,1.6-0.5,2.4c0,0,0,0.1,0,0.1                                        l6.1,18.9c0.3,1.2,1.4,2.1,2.8,2.1h29.5c2.2,0,4-1.6,4.3-3.8l4.6-33.2h6c1,0,1.8-0.8,1.8-1.8S58.8,1.3,57.8,1.3z M43.7,37.4                                        c-0.1,0.4-0.4,0.8-0.9,0.8h-29L8.1,20.6h37.9L43.7,37.4z"></path>
+                                            </g>
+                                        </svg><span>[[ numItems ]]</span>
+                                    </div><b>[[ totalCost ]] so'm</b>
+                                </a>
+                            {% comment %} <div class="brator-cart-item-list">
+                                <div class="brator-cart-item-list-header">
+                                    <h2>Cart<span> (5 items)</span></h2>
+                                    <button class="brator-cart-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                {% for item in cart %}
+                                    {% with product=item.product %}
+                                        <div class="brator-cart-item-list-item">
+                                            <div class="brator-cart-item-list-item-img"><a href="{{ product.get_absolute_url }}"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{% if product.image %}{{ product.image.url}}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /></a></div>
+                                            <div class="brator-cart-item-list-item-title">
+                                                <div class="brator-cart-item-list-item-title-one"><a href="#_">
+                                                        <h2>{{ product.name }}</h2>
+                                                    </a>
+                                                    <div class="price-pdo">
+                                                        <h4>{{ item.quantity }}</h4>
+                                                        <h5>x</h5>
+                                                        <h6>${{ item.price }} = ${{ item.total_price }}</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="brator-cart-item-list-item-title-accetion">
+                                                    <p>19” DIAMETER, White/Sliver</p>
+                                                    <form action="{% url "cart:cart_remove" product.id %}" method="post">
+                                                        <div class="brator-cart-item-list-item-title-accetion-part"><a href="{{ product.category.slug }}">
+                                                                <svg class="bi bi-pencil-square" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+                                                                </svg></a>
+                                                            <button type="submit" class="cart-item-close">
+                                                                {% csrf_token %}
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endwith %}
+                                {% endfor %}
+                                {% comment %} <div class="brator-cart-item-list-item">
+                                    <div class="brator-cart-item-list-item-img"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/images/cart-02.jpg" alt="alt" /></div>
+                                    <div class="brator-cart-item-list-item-title">
+                                        <div class="brator-cart-item-list-item-title-one"><a href="#_">
+                                                <h2>Automatic Proshift<br>Shift Knob</h2>
+                                            </a>
+                                            <div class="price-pdo">
+                                                <h4>4</h4>
+                                                <h5>x</h5>
+                                                <h6><span>$21.99</span><span>$26.99</span></h6>
+                                            </div>
+                                        </div>
+                                        <div class="brator-cart-item-list-item-title-accetion">
+                                            <p>19” DIAMETER, White/Sliver</p>
+                                            <div class="brator-cart-item-list-item-title-accetion-part"><a href="#_">
+                                                    <svg class="bi bi-pencil-square" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+                                                    </svg></a>
+                                                <button class="cart-item-close">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="brator-cart-item-list-money-area">
+                                    <div class="brator-cart-item-money"><span>Total before discount</span><span>$843.19</span></div>
+                                    <div class="brator-cart-item-money discount-me"><span>Discount</span><span>- $5.00</span></div>
+                                    <div class="brator-cart-item-money"><span>Subtotal</span><span>$838.19</span></div>
+                                </div>
+                                <div class="brator-cart-total-money">
+                                    <div class="brator-cart-total-header"><span>total</span><span>${{ cart.get_total_price }}</span></div>
+                                    <div class="brator-cart-total-action"><a href="{% url "shop:product_list" %}">View Cart</a><a href="#">Checkout</a></div>
+                                </div>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brator-plan-pixel-area">
+        <div class="container-xxxl container-xxl container">
+            <div class="col-12">
+                <div class="plan-pixel-area"></div>
+            </div>
+        </div>
+    </div>
+    <div class="brator-header-menu-area">
+        <div class="close-menu-bg"></div>
+        <div class="brator-mega-menu-close">
+            <svg class="bi bi-x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+            </svg>
+        </div>
+        <div class="container-xxxl container-xxl container">    
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="brator-header-menu-with-info">
+                        <div class="brator-header-menu">
+                            <ul class="list-style-outside-none">
+                                <li class="down-menu"><a href="{% url 'frontpage' %}">&#127968; Asosiy</a>
+                                    {% comment %} <ul>
+                                        <li><a href="index.html">Home 1</a></li>
+                                        <li><a href="index-2.html">Home 2</a></li>
+                                        <li><a href="index-3.html">Home 3</a></li>
+                                    </ul> {% endcomment %}
+                                </li>
+                                {% comment %} <li><a href="about.html">About us</a></li> {% endcomment %}
+                                <li class="mega-menu-li"><a href="#_">🛒 Katalog<span class="count-hot-beg">MEGA</span></a>
+                                    <div class="mega-menu-area">
+                                        <div class="mega-menu-cat-list">
+                                            <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
+                                                {% for category in menu_categories %}
+                                                    <a href="{% url 'category_detail' category.slug %}"><img src="{% if c.image %}{{ c.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ category.title }}</span></a>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="mega-menu-cat-list-mdl mega-menu-cat-list-single-area">
+                                                {% comment %} {% for c8 in four_to_8_cat %}
+                                                    <a href="{{ c8.get_absolute_url }}"><img src="{% if c8.image %}{{ c8.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8.name }}</span></a>
+                                                {% endfor %} {% endcomment %}
+                                            </div>
+                                            <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
+                                                {% comment %} {% for c8_12 in four_to_8_12_cat %}
+                                                    <a href="{{ c8_12.get_absolute_url }}"><img src="{% if c8_12.image %}{{ c8_12.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8_12.name }}</span></a>
+                                                {% endfor %} {% endcomment %}
+                                            </div>
+                                        </div>
+                                        {% comment %} <div class="mega-menu-offer">
+                                            <div class="brator-offer-box-two lazyload" data-bg="assets/images/offer/offer-02.png" >
+                                                <div class="budget-area"><span>mega bundle</span></div>
+                                                <h2>Helix Engine Fluids</h2>
+                                                <p>Pack 3pcs just:</p>
+                                                <h6><span>$89.90</span><span>$250.80</span></h6><a href="shop-sub-category.html">Shop Now</a>
+                                            </div>
+                                        </div> {% endcomment %}
+                                    </div>
+                                </li>
+                                {% comment %} <li class="down-menu">
+                                    <a href="#_">Blog</a>
+                                    <ul>
+                                        <li><a href="blog-grid.html">Blog Grid</a></li>
+                                        <li><a href="blog-list.html">Blog List</a></li>
+                                        <li><a href="blog-single.html">Blog Single</a></li>
+                                    </ul>
+                                </li> {% endcomment %}
+                                <li class="down-menu">
+                                    <a href="{% url 'product_list' %}">♨️ Yangi mahsulotlar</a>
+                                    {% comment %} <ul>
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                                        <li><a href="compare.html">Product Compare</a></li>
+                                        <li><a href="product-layout-01.html">Product Layout 1</a></li>
+                                        <li><a href="product-layout-02.html">Product Layout 2</a></li>
+                                        <li><a href="shop-categories.html">Shop Category</a></li>
+                                        <li><a href="shop-sub-category-list.html">Shop Sub Category List</a></li>
+                                        <li><a href="shop-sub-category.html">Shop Sub Category</a></li>
+                                    </ul> {% endcomment %}
+                                </li>
+                                <li><a href="#">💸 Brendlar</a></li>
+                                <li><a href="{% url 'contact' %}">💻 Biz haqda</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="brator-header-menu-info"><a href="#_">☑️ Buyurtma Holati</a><span>📞 24/7 Yordam:</span><a class="phomeee" href="#_">+998(91)995-88-86</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brator-slide-menu-area">
+        <div class="brator-slide-menu-bg"></div>
+        <div class="brator-slide-menu-content">
+            <div class="brator-slide-menu-close">
+                <svg class="bi bi-x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                </svg>
+            </div>
+            <div class="brator-slide-logo-items"></div>
+            <div class="brator-slide-menu-items"></div>
+        </div>
+    </div>
+    <div class="brator-header-menu-area scroll-menu">
+        <div class="close-menu-bg"></div>
+        <div class="brator-mega-menu-close">
+            <svg class="bi bi-x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+            </svg>
+        </div>
+        <div class="container-xxxl container-xxl container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="brator-header-menu-with-info">
+                        <div class="brator-header-menu">
+                            <ul class="list-style-outside-none">
+                                <li class="down-menu"><a href="">&#127968; Asosiy</a>
+                                    {% comment %} <ul>
+                                        <li><a href="index.html">Home 1</a></li>
+                                        <li><a href="index-2.html">Home 2</a></li>
+                                        <li><a href="index-3.html">Home 3</a></li>
+                                    </ul> {% endcomment %}
+                                </li>
+                                <li class="mega-menu-li"><a href="#_">🛒 Katalog<span class="count-hot-beg">MEGA</span></a>
+                                    <div class="mega-menu-area">
+                                        <div class="mega-menu-cat-list">
+                                            <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
+                                                {% for category in menu_categories %}
+                                                    <a href="{% url 'category_detail' category.slug %}"><img src="{% if c.image %}{{ c.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ category.title }}</span></a>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="mega-menu-cat-list-mdl mega-menu-cat-list-single-area">
+                                                {% comment %} {% for c8 in four_to_8_cat %}
+                                                    <a href="{{ c8.get_absolute_url }}"><img src="{% if c8.image %}{{ c8.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8.name }}</span></a>
+                                                {% endfor %} {% endcomment %}
+                                            </div>
+                                            <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
+                                                {% comment %} {% for c8_12 in four_to_8_12_cat %}
+                                                    <a href="{{ c8_12.get_absolute_url }}"><img src="{% if c8_12.image %}{{ c8_12.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8_12.name }}</span></a>
+                                                {% endfor %} {% endcomment %}
+                                            </div>
+                                        </div>
+                                        {% comment %} <div class="mega-menu-offer">
+                                            <div class="brator-offer-box-two lazyload" data-bg="assets/images/offer/offer-02.png" >
+                                                <div class="budget-area"><span>mega bundle</span></div>
+                                                <h2>Helix Engine Fluids</h2>
+                                                <p>Pack 3pcs just:</p>
+                                                <h6><span>$89.90</span><span>$250.80</span></h6><a href="shop-sub-category.html">Shop Now</a>
+                                            </div>
+                                        </div> {% endcomment %}
+                                    </div>
+                                </li>
+                                {% comment %} <li class="down-menu">
+                                    <a href="#_">Blog</a>
+                                    <ul>
+                                        <li><a href="blog-grid.html">Blog Grid</a></li>
+                                        <li><a href="blog-list.html">Blog List</a></li>
+                                        <li><a href="blog-single.html">Blog Single</a></li>
+                                    </ul>
+                                </li> {% endcomment %}
+                                <li class="down-menu">
+                                    <a href="{% url 'product_list' %}">♨️ Yangi mahsulotlar</a>
+                                    {% comment %} <ul>
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                                        <li><a href="compare.html">Product Compare</a></li>
+                                        <li><a href="product-layout-01.html">Product Layout 1</a></li>
+                                        <li><a href="product-layout-02.html">Product Layout 2</a></li>
+                                        <li><a href="shop-categories.html">Shop Category</a></li>
+                                        <li><a href="shop-sub-category-list.html">Shop Sub Category List</a></li>
+                                        <li><a href="shop-sub-category.html">Shop Sub Category</a></li>
+                                    </ul> {% endcomment %}
+                                </li>
+                                <li><a href="contact-us.html">💸 Brendlar</a></li>
+                                <li><a href="about.html">💻 Biz haqda</a></li>
+                            </ul>
+                        </div>
+                        <div class="brator-header-menu-info"><a href="">☑️ Buyurtma Holati</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Footer top one start-->
+    <div class="brator-footer-top-area">
+        <div class="container-xxxl container-xxl container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-6">
+                    <div class="brator-footer-top-element brator-footer-top-address">
+                        <h6 class="footer-top-title">☎️ Biz bilan bog'lanish</h6>
+                        <div class="brator-footer-top-content">
+                            <p>📞 24/7 Yordam:</p><a class="call-top-p" href="#_">+998(91)995-88-86</a>
+                            <p>➡️Mo'ljal: Urganch, Darital</p><a class="e-mail-to" href="#_">info@datashop.com</a><img class="lazyload tru-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{% static 'img/datalogo.png' %}" alt="logo" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-6">
+                    <div class="brator-footer-top-element">
+                        <h6 class="footer-top-title">⚙️Mijozga hizmat</h6>
+                        <div class="brator-footer-top-content brator-link-list-one"><a href="#_">Help Center</a><a href="#_">My Account</a><a href="#_">Track My Order</a><a href="#_">Return Policy</a><a href="#_">Gift Cards</a><a href="#_">Buy Wholesale</a><a href="#_">FAQ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-2 col-lg-6">
+                    <div class="brator-footer-top-element">
+                        <h6 class="footer-top-title">💡 Axborot</h6>
+                        <div class="brator-footer-top-content brator-link-list-one"><a href="{% url 'about' %}">About DataShop</a><a href="#_">Investors</a><a href="#_">Blog</a><a href="#_">Career</a><a href="#_">Contact</a><a href="#_">Affiliate Program</a><a href="#_">Sell on Brator</a><a href="#_">Parnership</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6">
+                    <div class="brator-footer-top-element">
+                        <h6 class="footer-top-title">📧 Xabarnoma</h6>
+                        <div class="brator-footer-top-content">
+                            <p>📥 Aktsiyalar va kuponlar haqidagi so'nggi yangiliklarni olish uchun hozir ro'yxatdan o'ting. Xavotir olmang, biz spam yubormaymiz!</p>
+                            <div class="brator-sub-form">
+                                <div class="news-letter-form"><span class="wpcf7-form-control-wrap email">
+                                        <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" type="email" name="email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Email Address" /></span>
+                                    <button class="wpcf7-form-control wpcf7-submit" type="submit">Obuna</button><span class="ajax-loader"></span>
+                                </div>
+                            </div>
+                            <p>Obuna boʻlish orqali siz bizning <a href="#_">Siyosatimizni</a> qabul qilasiz!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer top one end-->
+    <!-- Footer one start-->
+    <footer class="brator-footer-area">
+        <div class="container-xxxl container-xxl container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="brator-copyright-area">
+                        <p>© 2022<a href="https://github.com/codewithakbar">DataSoft Mchj.</a>Barcha huquqlar himoyalangan.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="brator-payment-area svg-link">
+                        <h6 class="brator-payment-title">To'lov usullari</h6><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/paypal.png" alt="logo" /></a><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/master.png" alt="logo" /></a><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/visa.png" alt="logo" /></a><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/stripe.png" alt="logo" /></a><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/klarna.png" alt="logo" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="brator-social-link svg-link">
+                        <h6 class="brator-social-link">Obuna bo'ling</h6><a href="#-">
+                            {% comment %} <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                <path d="M56.9,14.8l3.9-4.9C62,8.6,62.3,7.6,62.4,7c-3,1.9-5.9,2.5-7.9,2.5h-0.8L53.2,9c-2.5-2.2-5.5-3.4-8.9-3.4                            c-7.2,0-13,5.9-13,13c0,0.5,0,1,0.1,1.5l0.3,2.1l-2.2-0.1C16.3,21.8,5.5,10.5,3.7,8.5c-2.9,5.3-1.3,10.2,0.5,13.3l3.5,5.8l-5.5-3                            c0.1,4.3,1.8,7.7,4.9,10.2l2.7,2L7,37.9c1.8,5.3,5.6,7.4,8.6,8.3l3.8,1l-3.3,2.3c-5.7,4-13,3.8-16.1,3.5c6.6,4.5,14.2,5.5,19.7,5.5                            c4,0,7-0.5,7.7-0.7c29-6.8,30.3-32.6,30.2-37.8v-0.8l0.6-0.5c3.5-3.3,5-5.1,5.8-6.1c-0.3,0.2-0.7,0.3-1.2,0.4L56.9,14.8z"></path>
+                            </svg></a><a href="#_">
+                            {% comment %} <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                <path d="M47.9,25.6L47.9,25.6h-5.8H40v-2.1v-6.4v-2.1h2.1h4.4c1.1,0,2-0.9,2-2V2c0-1.1-0.9-2-2-2h-7.6c-8.2,0-13.9,5.9-13.9,14.4                            v9.1v2.1h-2.1H16c-1.5,0-2.7,1.2-2.7,2.8v7.4c0,1.5,1.2,2.7,2.7,2.7h6.9h2.1v2.1v20.8c0,1.5,1.2,2.7,2.7,2.7h9.8                            c0.6,0,1.2-0.3,1.6-0.7c0.5-0.5,0.7-1.2,0.7-1.8l0,0v0V40.5v-2.1H42h4.6c1.3,0,2.4-0.9,2.6-2.1l0-0.1l0-0.1l1.4-7.1                            c0.2-0.8,0-1.6-0.6-2.4C49.6,26.1,48.8,25.7,47.9,25.6z"></path>
+                            </svg></a>{% endcomment %}<a href="https://www.youtube.com/c/DATALEARNINGCENTRE/videos">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
+                                <path d="M62.7,16.6c-0.7-2.8-2.9-4.9-5.7-5.7c-5-1.3-25-1.3-25-1.3s-20,0-25,1.3c-2.8,0.7-4.9,2.9-5.7,5.7C0,21.6,0,32,0,32  s0,10.4,1.3,15.4c0.7,2.8,2.9,4.9,5.7,5.7c5,1.3,25,1.3,25,1.3s20,0,25-1.3c2.8-0.7,4.9-2.9,5.7-5.7C64,42.4,64,32,64,32  S64,21.6,62.7,16.6z M25.6,41.6V22.4L42.2,32L25.6,41.6z"></path>
+                            </svg></a><a href="https://www.instagram.com/datashop_uz/">
+                            <svg version="1.1" id="lni_lni-instagram-original" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                                <g>
+                                    <path d="M62.9,19.2c-0.1-3.2-0.7-5.5-1.4-7.6S59.7,7.8,58,6.1s-3.4-2.7-5.4-3.5c-2-0.8-4.2-1.3-7.6-1.4C41.5,1,40.5,1,32,1s-9.4,0-12.8,0.1s-5.5,0.7-7.6,1.4S7.8,4.4,6.1,6.1s-2.8,3.4-3.5,5.5c-0.8,2-1.3,4.2-1.4,7.6S1,23.5,1,32s0,9.4,0.1,12.8c0.1,3.4,0.7,5.5,1.4,7.6c0.7,2.1,1.8,3.8,3.5,5.5s3.5,2.8,5.5,3.5c2,0.7,4.2,1.3,7.6,1.4C22.5,63,23.4,63,31.9,63s9.4,0,12.8-0.1s5.5-0.7,7.6-1.4c2.1-0.7,3.8-1.8,5.5-3.5s2.8-3.5,3.5-5.5c0.7-2,1.3-4.2,1.4-7.6c0.1-3.2,0.1-4.2,0.1-12.7S63,22.6,62.9,19.2zM57.3,44.5c-0.1,3-0.7,4.6-1.1,5.8c-0.6,1.4-1.3,2.5-2.4,3.5c-1.1,1.1-2.1,1.7-3.5,2.4c-1.1,0.4-2.7,1-5.8,1.1c-3.2,0-4.2,0-12.4,0s-9.3,0-12.5-0.1c-3-0.1-4.6-0.7-5.8-1.1c-1.4-0.6-2.5-1.3-3.5-2.4c-1.1-1.1-1.7-2.1-2.4-3.5c-0.4-1.1-1-2.7-1.1-5.8c0-3.1,0-4.1,0-12.4s0-9.3,0.1-12.5c0.1-3,0.7-4.6,1.1-5.8c0.6-1.4,1.3-2.5,2.3-3.5c1.1-1.1,2.1-1.7,3.5-2.3c1.1-0.4,2.7-1,5.8-1.1c3.2-0.1,4.2-0.1,12.5-0.1s9.3,0,12.5,0.1c3,0.1,4.6,0.7,5.8,1.1c1.4,0.6,2.5,1.3,3.5,2.3c1.1,1.1,1.7,2.1,2.4,3.5c0.4,1.1,1,2.7,1.1,5.8c0.1,3.2,0.1,4.2,0.1,12.5S57.4,41.3,57.3,44.5z" />
+                                    <path d="M32,16.1c-8.9,0-15.9,7.2-15.9,15.9c0,8.9,7.2,15.9,15.9,15.9S48,40.9,48,32S40.9,16.1,32,16.1z M32,42.4c-5.8,0-10.4-4.7-10.4-10.4S26.3,21.6,32,21.6c5.8,0,10.4,4.6,10.4,10.4S37.8,42.4,32,42.4z" />
+                                    <ellipse cx="48.7" cy="15.4" rx="3.7" ry="3.7" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer one end-->
+        <!-- Bottom nav strat -->
+        <div class="app_bar">
+            <ul class="app-bar-list">
+                <li class="app-bar-item"><a href="{% url 'frontpage' %}">
+                    <i class='bx bx-home'></i>
+                    <small>Home</small>
+                </a></li>
+                <li class="app-bar-item"><a href="#">
+                    <i class='bx bx-search-alt-2'></i>
+                    <small>Search</small>
+                </a></li>
+                <li class="app-bar-item app_bar_shop"><a href="#">
+                    <i class='bx bx-shopping-bag'></i>
+                </a></li>
+                <li class="app-bar-item"><a href="#">
+                    <i class='bx bx-message-rounded'></i>
+                    <small>Chat</small>
+                </a></li>
+                <li class="app-bar-item"><a href="#">
+                    <i class='bx bx-user' ></i>
+                    <small>Profile</small>
+                </a></li>
+            </ul>
+        </div>
+        <!-- Bottom nav end -->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
+        </svg><span>tepa</span>
+    </button>
+    <script src="{% static 'assets/js/jquery.js' %}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/nouislider.js' %}"></script>
+    <script src="{% static 'assets/js/splide.min.js' %}"></script>
+    <script src="{% static 'assets/js/lazysizes.min.js' %}"></script>
+    <script src="{% static 'assets/js/ls.bgset.min.js' %}"></script>
+    <script src="{% static 'assets/js/tab.js' %}"></script>
+    <script src="{% static 'assets/js/img-zoom.js' %}"></script>
+    <script src="{% static 'assets/js/gsap-core.js' %}"></script>
+    <script src="{% static 'assets/js/scroll-trigger.js' %}"></script>
+    <script src="{% static 'assets/js/select2.min.js' %}"></script>
+    <script src="{% static 'assets/js/addIndicators.js' %}"></script>
+    <script src="{% static 'assets/js/animation.gsap.js' %}"></script>
+    <script src="{% static 'assets/js/brator-script.js' %}"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex@3.5.1/dist/vuex.js"></script>
+    <script>
+        var store = new Vuex.Store({
+            state: {
+                numItems: {{ cart.get_total_length }},
+                totalCost: {{ cart.get_total_cost }}
+            },
+            mutations: {
+                increment(state, quantity) {
+                    state.numItems += quantity;
+                },
+                changeTotalCost(state, newCost) {
+                    state.totalCost += newCost
+                }
+            }
+        });
+
+        var navbarapp = new Vue({
+            el: '#navbarapp',
+            delimiters: ['[[', ']]'],
+            store: store,
+            computed: {
+                numItems: function() {
+                    return store.state.numItems
+                },
+                totalCost: function() {
+                    return store.state.totalCost
+                }
+            }
+        });
+    </script>
+    {% block scripts %}
+    {% endblock scripts %}
+
+</body>
+
+</html>

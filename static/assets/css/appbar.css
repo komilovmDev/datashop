@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.app_bar{
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    display: none;
+
+  }
+  .app_bar .app-bar-list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .app-bar-item a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .app-bar-item a small{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .app_bar .app-bar-list .app-bar-item a i{
+    text-decoration: none;
+    font-size: 22px;
+  }
+  .app_bar .app-bar-list .app-bar-item a i{
+    font-weight: 100;
+    /* padding: 13px  0;  */
+  }
+  .app_bar_shop a .bx.bx-shopping-bag {
+    /* background: #000; */
+    background: #ff2524 ;
+    padding: 13px 32px !important; 
+    border-radius: 20px;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 415px) {
+    .app_bar{
+        display: flex;
+    }
+  }
