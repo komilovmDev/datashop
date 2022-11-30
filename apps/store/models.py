@@ -29,7 +29,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255)
     
     # description = models.TextField(blank=True, null=True)
-    description = RichTextField()
+    description = RichTextUploadingField()
     
     protsessor = models.CharField(max_length=255, blank=True, null=True)
     videokarta = models.CharField(max_length=255, blank=True, null=True)
