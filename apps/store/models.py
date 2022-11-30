@@ -60,5 +60,5 @@ class BannerHome(models.Model):
 class TanilganBrendlar(models.Model):
     image = models.ImageField(upload_to='brands/', blank=True, null=True)
 
-    def __str__(self):
-        return self.image
+    # def __str__(self):
+    #     return self.image
