@@ -213,7 +213,7 @@
                             </div>
                             <div class="js-tabs__content brator-product-single-tab-item">
                                 {% if product.description %}
-                                    {{ product.description|linebreaks }}
+                                    {{ product.description|safe }}
                                 {% endif %}
                             </div>
                             <div class="js-tabs__content brator-product-single-tab-item">
