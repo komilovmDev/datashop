@@ -54,11 +54,11 @@ class BannerHome(models.Model):
     image = models.ImageField(upload_to='banners/', blank=True, null=True)
 
     def __str__(self):
-        return f"Banner Rasmlari"
+        return self.title
 
 
 class TanilganBrendlar(models.Model):
     image = models.ImageField(upload_to='brands/', blank=True, null=True)
 
     def __str__(self):
-        return f"Logo Rasmlari"
+        return self.image
