@@ -110,7 +110,7 @@
                                             <div class="brator-product-single-light-info">
                                                 <div class="brator-product-single-light-info-s">
                                                     {% if product.description %}
-                                                        {{ product.description|linebreaks }}
+                                                        {{ product.description|linebreaks | safe }}
                                                     {% endif %}
                                                 </div>
                                                 {% comment %} <div class="brator-product-single-light-info-s">
