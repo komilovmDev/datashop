@@ -854,11 +854,13 @@
                     </div>
                 </div>
                 <div class="row sponser-row">
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="brator-brand-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{% static './assets/images/brand/brand-item-1.png' %}" alt="logo" /></a></div>
-                    </div>
+                    {% for brands in brand_image %}
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="brator-brand-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ brands.image.url }}" alt="logo" /></a></div>
+                        </div>
+                    {% endfor %}
 
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+                    {% comment %} <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="brator-brand-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{% static './assets/images/brand/brand-item-2.png' %}" alt="logo" /></a></div>
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
@@ -872,7 +874,7 @@
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="brator-brand-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{% static './assets/images/brand/brand-item-6.png' %}" alt="logo" /></a></div>
-                    </div>
+                    </div> {% endcomment %}
                     
                 </div>
             </div>

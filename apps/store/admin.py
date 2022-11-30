@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Product, BannerHome
+from .models import Category, Product, BannerHome, TanilganBrendlar
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -8,7 +8,6 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 
-# admin.site.register(Product)
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -17,3 +16,4 @@ class ProductAdmin(admin.ModelAdmin):
 
 admin.site.register(BannerHome)
 
+admin.site.register(TanilganBrendlar)

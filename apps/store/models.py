@@ -56,3 +56,9 @@ class BannerHome(models.Model):
     def __str__(self):
         return f"Banner Rasmlari"
 
+
+class TanilganBrendlar(models.Model):
+    image = models.ImageField(upload_to='brands/', blank=True, null=True)
+
+    def __str__(self):
+        return f"Logo Rasmlari"
