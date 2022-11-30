@@ -52,6 +52,9 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
 
+    'ckeditor', # CKEditor config
+    'ckeditor_uploader', # CKEditor media uploader
+
     'apps.cart',
     'apps.core',
     'apps.order',
@@ -150,6 +153,9 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+#ckeditor upload path
+CKEDITOR_UPLOAD_PATH="uploads/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
