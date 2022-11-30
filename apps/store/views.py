@@ -67,3 +67,14 @@ def product_list_colm(request):
 
     return render(request, 'product_colm.html', context)
 
+
+def sub_category_detail(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    products = category.products.all()
+
+    context = {
+        'category': category,
+        'products': products,
+    }
+
+    return render(request, 'sub_cat_list.html', context)
