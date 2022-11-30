@@ -3,6 +3,7 @@ from django.core.files import File
 from django.db import models
 from PIL import Image
 from ckeditor_uploader.fields import RichTextUploadingField 
+from ckeditor.fields import RichTextField
 
 
 
@@ -28,7 +29,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255)
     
     # description = models.TextField(blank=True, null=True)
-    description = RichTextUploadingField()
+    description = RichTextField()
     
     protsessor = models.CharField(max_length=255, blank=True, null=True)
     videokarta = models.CharField(max_length=255, blank=True, null=True)
