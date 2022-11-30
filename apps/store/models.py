@@ -10,6 +10,8 @@ class Category(models.Model):
     slug = models.SlugField(max_length=255)
     ordering = models.IntegerField(default=0)
 
+    image = models.ImageField(upload_to='uploads/', blank=True, null=True)
+
     class Meta:
         verbose_name_plural = 'Categories'
         ordering = ('ordering',)
@@ -25,11 +27,11 @@ class Product(models.Model):
     
     description = models.TextField(blank=True, null=True)
     
-    protsessor = models.TextField(blank=True, null=True)
-    videokarta = models.TextField(blank=True, null=True)
-    operativ_hotira = models.TextField(blank=True, null=True)
-    hard_size = models.TextField(blank=True, null=True)
-    ekran = models.TextField(blank=True, null=True)
+    protsessor = models.CharField(max_length=255, blank=True, null=True)
+    videokarta = models.CharField(max_length=255, blank=True, null=True)
+    operativ_hotira = models.CharField(max_length=255, blank=True, null=True)
+    hard_size = models.CharField(max_length=255, blank=True, null=True)
+    ekran = models.CharField(max_length=255, blank=True, null=True)
 
     price = models.FloatField()
     is_featured = models.BooleanField(default=False)

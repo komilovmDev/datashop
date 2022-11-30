@@ -8,7 +8,12 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 
-admin.site.register(Product)
+# admin.site.register(Product)
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'price']
+    prepopulated_fields = {'slug': ('title',)}
 
 admin.site.register(BannerHome)
 
