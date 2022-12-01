@@ -47,4 +47,4 @@ urlpatterns = [
 
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
