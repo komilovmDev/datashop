@@ -30,6 +30,7 @@ class Product(models.Model):
     
     # description = models.TextField(blank=True, null=True)
     description = RichTextUploadingField()
+    qisqacha_malumot = RichTextUploadingField()
     
     protsessor = models.CharField(max_length=255, blank=True, null=True)
     videokarta = models.CharField(max_length=255, blank=True, null=True)
