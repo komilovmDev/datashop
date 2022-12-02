@@ -62,3 +62,16 @@ class TanilganBrendlar(models.Model):
 
     # def __str__(self):
     #     return self.image
+
+
+class FooterPayBrands(models.Model):
+    title = models.CharField(max_length=244)
+    image = models.ImageField(upload_to='paybrandsfooter/', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Tolov turlari, Footerqismi'
+
+    def __str__(self):
+        return self.title
+
+

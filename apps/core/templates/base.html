@@ -522,7 +522,10 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="brator-payment-area svg-link">
-                        <h6 class="brator-payment-title">To'lov usullari</h6><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/paypal.png" alt="logo" /></a><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/master.png" alt="logo" /></a><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/visa.png" alt="logo" /></a><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/stripe.png" alt="logo" /></a><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="./assets/images/footer/klarna.png" alt="logo" /></a>
+                        <h6 class="brator-payment-title">To'lov usullari</h6>
+                            {% for pay_images in pay_images_footer %}
+                                <a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ pay_images.image.url }}" alt="logo" /></a>
+                            {% endfor %}
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">

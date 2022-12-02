@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Product, BannerHome, TanilganBrendlar
+from .models import Category, Product, BannerHome, TanilganBrendlar, FooterPayBrands
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -17,3 +17,5 @@ class ProductAdmin(admin.ModelAdmin):
 admin.site.register(BannerHome)
 
 admin.site.register(TanilganBrendlar)
+
+admin.site.register(FooterPayBrands)
