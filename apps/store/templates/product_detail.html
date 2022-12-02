@@ -108,11 +108,11 @@
                                                 <p><span>Ship to</span> North Hills, CA 91343</p>
                                             </div>
                                             <div class="brator-product-single-light-info">
-                                                <div class="brator-product-single-light-info-s">
-                                                    {% if product.description %}
-                                                        {{ product.description | truncatewords:45 | safe }}
-                                                    {% endif %}
-                                                </div>
+                                                
+                                                {% if product.description %}
+                                                    {{ product.description | truncatewords:45 | safe }}
+                                                {% endif %}
+                                                
                                                 {% comment %} <div class="brator-product-single-light-info-s">
                                                     <h5>Part Number: </h5><span>WS5-451A2</span>
                                                 </div>
@@ -162,10 +162,10 @@
                                         </div>
                                     </form>
                                     <div class="brator-product-add-to-cart-button-added">
-                                        <button @click="addToCart({{ product.id }})" type="submit">Add To Cart</button> 
+                                        <button @click="addToCart({{ product.id }})" type="submit">Savatga Qoshish</button> 
                                         {% comment %} <input type="submit" value="Add to cart"> {% endcomment %}
                                     </div>
-                                    <div class="brator-product-single-cart-action">
+                                    {% comment %} <div class="brator-product-single-cart-action">
                                         <div class="brator-product-single-cart-wish">
                                             <button>
                                                 <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -180,10 +180,10 @@
                                                 </svg><span>Compare</span>
                                             </button>
                                         </div>
-                                    </div>
-                                    <div class="brator-product-add-to-cart-quanty">
+                                    </div> {% endcomment %}
+                                    {% comment %} <div class="brator-product-add-to-cart-quanty">
                                         <h6>Guaranteed Safe Checkout</h6><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/payment.png" alt="as" />
-                                    </div>
+                                    </div> {% endcomment %}
                                 </div>
                             </div>
                         </div>
@@ -205,19 +205,23 @@
                         <div class="brator-product-single-tab-list js-tabs side-tabbar" id="tabs-product-content">
                             <div class="brator-product-single-tab-header js-tabs__header">
                                 <ul>
-                                    <li><a class="js-tabs__title" href="#">Description </a></li>
-                                    <li><a class="js-tabs__title" href="#">Specification </a></li>
-                                    <li><a class="js-tabs__title" href="#">Reviews (14) </a></li>
-                                    <li><a class="js-tabs__title" href="#">Product Q&A</a></li>
+                                    <li><a class="js-tabs__title" href="#">Mahsulot haqida </a></li>
+                                    <li><a class="js-tabs__title" href="#">Xususiyatlari </a></li>
+                                    {% comment %}<li><a class="js-tabs__title" href="#">Reviews (14) </a></li>
+                                    <li><a class="js-tabs__title" href="#">Product Q&A</a></li> {% endcomment %}
                                 </ul>
                             </div>
                             <div class="js-tabs__content brator-product-single-tab-item">
-                                {% if product.description %}
-                                    {{ product.description|safe }}
+                                {% if product.maxsulot_haqida %}
+                                    {{ product.maxsulot_haqida|safe }}
                                 {% endif %}
                             </div>
                             <div class="js-tabs__content brator-product-single-tab-item">
-                                <p>pug</p>
+                                
+                                {% if product.description %}
+                                    {{product.description|safe}}
+                                {% endif %}
+                                
                             </div>
                         </div>
                     </div>

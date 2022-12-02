@@ -29,14 +29,9 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255)
     
     # description = models.TextField(blank=True, null=True)
-    description = RichTextUploadingField()
-    qisqacha_malumot = RichTextUploadingField()
-    
-    protsessor = models.CharField(max_length=255, blank=True, null=True)
-    videokarta = models.CharField(max_length=255, blank=True, null=True)
-    operativ_hotira = models.CharField(max_length=255, blank=True, null=True)
-    hard_size = models.CharField(max_length=255, blank=True, null=True)
-    ekran = models.CharField(max_length=255, blank=True, null=True)
+    description = RichTextUploadingField(verbose_name="Qisqacha malumot")
+    maxsulot_haqida = RichTextUploadingField(blank=True, null=True)
+    # xususiyatlari = RichTextUploadingField(blank=True, null=True, verbose_name="Maxsulot Xususiyatlari")
 
     price = models.FloatField()
     is_featured = models.BooleanField(default=False)
