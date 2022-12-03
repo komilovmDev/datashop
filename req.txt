@@ -3,3 +3,4 @@ Pillow
 requests
 python-dotenv
 django-ckeditor
+redis

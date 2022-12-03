@@ -82,7 +82,7 @@
                                         {% for c in category %}
                                             {% if not c.children.all %}
                                                 <li {% if category.slug == c.slug %}{% endif %}>
-                                                    <a href="#">{{ c.title }}</a>
+                                                    <a href="{% url 'category_detail' c.slug %}">{{ c.title }}</a>
                                                 </li>
                                             {% else %}
                                                 <li class="sub-cat"><a href="#">{{ c.name }}</a>
