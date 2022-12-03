@@ -768,7 +768,7 @@
                                     <div class="brator-product-single-item-info info-content-flex">
                                         <div class="brator-product-single-item-info-left">
                                             <div class="yollow-batch">Yangi</div>
-                                            <div class="stock-out-batch">Out OF stock</div>
+                                            {% comment %} <div class="stock-out-batch">Out OF stock</div> {% endcomment %}
                                         </div>
                                     </div>
                                     <div class="brator-product-single-item-img"><a href="{% url 'product_detail' product.category.slug product.slug %}"><img class="lazyload"><img class="lazyload" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /></a></div>
