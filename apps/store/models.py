@@ -29,6 +29,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255)
     
     # description = models.TextField(blank=True, null=True)
+    sotuvfda_mavjud = models.CharField(max_length=45, verbose_name='Sotuvda Mavjudmi?')
     description = RichTextUploadingField(verbose_name="Qisqacha malumot")
     maxsulot_haqida = RichTextUploadingField(blank=True, null=True)
     # xususiyatlari = RichTextUploadingField(blank=True, null=True, verbose_name="Maxsulot Xususiyatlari")
