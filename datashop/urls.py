@@ -44,6 +44,7 @@ urlpatterns = [
 
     path('<slug:category_slug>/<slug:slug>/', product_detail, name='product_detail'),
     path('<slug:slug>/', category_detail, name='category_detail'),
+    # path('<slug:slug>/', sub_category_detail, name='sub_category_detail'),
 
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
 
