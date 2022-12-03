@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 
 from .models import Product, Category, FooterPayBrands
+from .recommender import Recommender
+
 from django.db.models import Q
 
 def search(request):
@@ -25,9 +27,13 @@ def product_detail(request, category_slug, slug):
 
     footer_brand_pay_images = FooterPayBrands.objects.all()
 
+    r = Recommender()
+    recommended_products = r.suggest_products_for([product], 4)
+
     context = {
         'product': product,
         'pay_images_footer': footer_brand_pay_images,
+        'recommended_products': recommended_products,
 
     }
 
