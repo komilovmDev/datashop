@@ -51,7 +51,7 @@
     <div class="h-infobox__wrapper">
         <div class="tt-header-holder h-infobox__popup">
             <div class="brator-search-area">
-                <form class="search-form" role="search" method="get" action="/search/">
+                <form class="search-form" role="search" method="get" action="{% url 'search' %}">
                     <input class="search-field" type="search" placeholder="Katalog bo'yicha qidiring." name="query" required="required" />
                     <button type="submit">
                         <svg fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
@@ -561,7 +561,7 @@
                     <i class='bx bx-home'></i>
                     <small>Asosiy</small>
                 </a></li>
-                <li class="app-bar-item"><a href="{% url 'search' %}">
+                <li class="app-bar-item"><a href="#infobox__toggle-js">
                     <i class='bx bx-search-alt-2'></i>
                     <small>Izlash</small>
                 </a></li>
