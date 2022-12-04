@@ -9,7 +9,7 @@ from django.db.models import Q
 
 def search(request):
 
-    query = request.GET.git('query')
+    query = request.GET.get('query')
     products = Product.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
 
     footer_brand_pay_images = FooterPayBrands.objects.all()

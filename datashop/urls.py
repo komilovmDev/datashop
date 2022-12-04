@@ -21,12 +21,13 @@ from django.conf import settings
 
 from apps.cart.views import cart_detail
 from apps.core.views import frontpage, contact, about
-from apps.store.views import product_detail, category_detail, product_list, product_list_colm
+from apps.store.views import product_detail, category_detail, product_list, product_list_colm, search
 
 from apps.store.api import api_add_to_cart, api_remove_from_cart, api_checkout
 
 urlpatterns = [
     path('', frontpage, name='frontpage'),
+    path('search/', search, name='search'),
     path('cart/', cart_detail, name='cart'),
     path('contact/', contact, name='contact'),
     path('about/', about, name='about'),
