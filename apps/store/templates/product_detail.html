@@ -237,7 +237,6 @@
         </div>
     </div>
     <!-- bread start-->
-    {% if recommended_products %}
 
     <div class="brator-deal-product-slider recently-view">
         <div class="container-xxxl container-xxl container">
@@ -245,7 +244,7 @@
                 <div class="col-12">
                     <div class="brator-section-header">
                         <div class="brator-section-header-title">
-                            <h2>You May Also Like</h2>
+                            <h2>Bular ham yoqishi mumkin</h2>
                         </div>
                     </div>
                 </div>
@@ -267,7 +266,7 @@
                             <div class="splide__list">
 
 
-                            {% for p in recommended_products %}
+                            {% for p in related_products %}
                                 <div class="brator-product-single-item-area splide__slide design-two">
                                     <div class="brator-product-single-item-info info-content-left">
                                         <div class="brator-product-single-item-info-left">
@@ -276,9 +275,9 @@
                                     </div>
                                     <div class="brator-product-single-item-img"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{{ p.image.url }}" alt="alt" /></a></div>
                                     <div class="brator-product-single-item-mini">
-                                        <div class="brator-product-single-item-cat"><a href="{{ p.category.get_absolute_url }}">{{ p.category }}</a></div>
+                                        <div class="brator-product-single-item-cat"><a href="#"></a></div>
                                         <div class="brator-product-single-item-title">
-                                            <h5><a href="{{ p.get_absolute_url }}"> {{ p.title }}</a></h5>
+                                            <h5><a href="#"> {{ p.title }}</a></h5>
                                         </div>
                                         <div class="brator-product-single-item-review">
                                             <div class="brator-review">
@@ -319,7 +318,6 @@
             </div>
         </div>
     </div>
-    {% endif %}
     <!-- bread end-->
     <div class="brator-plan-pixel-area">
         <div class="container-xxxl container-xxl container">

@@ -1,3 +1,5 @@
+import random
+
 from django.shortcuts import render, get_object_or_404
 
 from .models import Product, Category, FooterPayBrands
@@ -27,13 +29,18 @@ def product_detail(request, category_slug, slug):
 
     footer_brand_pay_images = FooterPayBrands.objects.all()
 
-    r = Recommender()
-    recommended_products = r.suggest_products_for([product], 4)
+    # r = Recommender()
+    # recommended_products = r.suggest_products_for([product], 4)
+
+    related_products = list(product.category.products.exclude(id=product.id))
+    if len(related_products) >= 3:
+        related_products = random.sample(related_products, 3)
 
     context = {
         'product': product,
         'pay_images_footer': footer_brand_pay_images,
-        'recommended_products': recommended_products,
+        # 'recommended_products': recommended_products,
+        'related_products': related_products,
 
     }
 
