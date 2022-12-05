@@ -71,18 +71,33 @@
                         </div>
                         <div class="brator-sidebar-single-item">
                             <div class="shop-sidebar-title">
-                                <h2>Categories</h2>
+                                <h2>Kategoriyalar:</h2>
                             </div>
                             <div class="shop-sidebar-content">
                                 <div class="shop-cat-list">
                                     <ul>
-                                        <li><a href="#_">All Categories</a></li>
-                                        <li><a href="#_">Auto Parts</a></li>
-                                        <li><a href="#_">Car Care</a></li>
-                                        <li><a href="#_">Fluids & Chemicals</a></li>
-                                        <li><a href="#_">Oils</a></li>
-                                        <li><a href="#_">Tools & Supplies</a></li>
-                                        <li class="sub-cat"><a href="index-3.html">wheels & Tires</a>
+                                        <li {% if not category %} {% endif %}><a href="#">Barcha Kategoriya</a></li>
+
+                                        {% for c in menu_categories %}
+                                            {% if not c.children.all %}
+                                                <li {% if category.slug == c.slug %}{% endif %}>
+                                                    <a href="{% url 'category_detail' c.slug %}">{{ c.title }}</a>
+                                                </li>
+                                            {% else %}
+                                                <li class="sub-cat"><a href="#">{{ c.name }}</a>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
+                                                </svg>
+                                                <ul>
+                                                    {% for subcategory in c.children.all %}
+                                                        <li><a href="{{ subcategory.get_absolute_url }}">{{subcategory.title}}</a></li>
+                                                    {% endfor %}
+                                                    
+                                                </ul>
+                                            {% endif %}
+                                        {% endfor %}
+
+                                        {% comment %} <li class="sub-cat"><a href="index-3.html">wheels & Tires</a>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
                                             </svg>
@@ -104,7 +119,7 @@
                                                 <li><a href="#_">wheels</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#_">Clearance</a></li>
+                                        <li><a href="#_">Clearance</a></li> {% endcomment %}
                                     </ul>
                                 </div>
                             </div>
