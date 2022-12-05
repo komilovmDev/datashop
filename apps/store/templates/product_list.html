@@ -814,7 +814,7 @@
                                 </div>
                                 <div class="brator-product-single-item-area-right">
                                     <div class="brator-product-single-item-price">
-                                        <p><sub>{{ product.price }}so'm</sub>{% comment %} <b class="pub">$100</b>{% endcomment %}</p><span>без НДС</span>
+                                        <p><sub>{{ product.price|floatformat:0|intcomma }}so'm</sub>{% comment %} <b class="pub">$100</b>{% endcomment %}</p><span>без НДС</span>
                                     </div>
                                     <div class="brator-product-single-item-btn">
                                         <form action="#" method="post">
