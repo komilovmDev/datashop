@@ -34,6 +34,7 @@ class Product(models.Model):
     maxsulot_haqida = RichTextUploadingField(blank=True, null=True)
     # xususiyatlari = RichTextUploadingField(blank=True, null=True, verbose_name="Maxsulot Xususiyatlari")
 
+    # price = models.DecimalField(max_digits=35, decimal_places=0)
     price = models.FloatField()
     is_featured = models.BooleanField(default=False)
 
