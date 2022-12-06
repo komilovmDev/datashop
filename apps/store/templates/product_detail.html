@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block title %}
     {{ product.title }} |
@@ -131,7 +132,7 @@
                                 </div>
                                 <div class="brator-product-add-to-cart">
                                     <div class="brator-product-add-to-cart-price">
-                                        <h6><span class="sale">{{ product.price }}so'm</span></h6>
+                                        <h6><span class="sale">{{ product.price|floatformat:0|intcomma }}so'm</span></h6>
                                         <h7><span>без НДС</span></h7>
                                     </div>
                                     <div class="brator-product-add-to-cart-color">

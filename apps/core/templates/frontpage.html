@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 {% block title %}
-    Products |
+    Maxsulotlar |
 {% endblock %}
 
 {% block content %}
@@ -347,7 +348,7 @@
                                                 </div>
                                             </div>
                                             <div class="brator-product-single-item-price">
-                                                <p class="brator-price-black-text"><sub>{{ product.price }}so'm</sub></p>
+                                                <p class="brator-price-black-text"><sub>{{ product.price|floatformat:0|intcomma }}so'm</sub></p>
                                             </div>
                                             <div class="brator-product-single-item-btn"><a href="{% url 'product_detail' product.category.slug product.slug %}">Batafsil</a></div>
                                         </div>

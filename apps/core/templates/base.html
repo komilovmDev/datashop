@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +10,7 @@
     <!-- Meta Data        -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0 shrink-to-fit=no" />
+    <meta name="yandex-verification" content="b1058a721ba3e489" />
     <!-- Favicons-->
     <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/png" />
     <!-- Google Font-->
@@ -609,10 +611,15 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vuex@3.5.1/dist/vuex.js"></script>
     <script>
+
+        var get_total_length = '{{ cart.get_total_length }}'
+        var get_total_cost = '{{ cart.get_total_cost| floatformat:0 |intcomma }}'
+
+
         var store = new Vuex.Store({
             state: {
-                numItems: {{ cart.get_total_length }},
-                totalCost: {{ cart.get_total_cost }}
+                numItems: get_total_length,
+                totalCost: '{{ cart.get_total_cost| floatformat:0 |intcomma }}',
             },
             mutations: {
                 increment(state, quantity) {
@@ -636,6 +643,7 @@
                     return store.state.totalCost
                 }
             }
+            
         });
     </script>
     {% block scripts %}
