@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.humanize.templatetags.humanize import intcomma
 
 from apps.store.models import Product
 
@@ -79,6 +80,6 @@ class Cart(object):
         # else:
         #     return 0
 
-        return sum(float(item['total_price']) for item in self)
 
+        return sum(float(item['total_price']) for item in self)
             
