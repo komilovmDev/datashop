@@ -615,7 +615,7 @@
         var store = new Vuex.Store({
             state: {
                 numItems: {{ cart.get_total_length }},
-                totalCost: parseFloat({{ cart.get_total_cost |floatformat| intcomma }}),
+                totalCost: {{ cart.get_total_cost }},
             },
             mutations: {
                 increment(state, quantity) {
