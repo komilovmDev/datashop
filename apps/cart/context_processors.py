@@ -15,3 +15,5 @@ def req_product(request):
         related_products = random.sample(related_products, 3)
 
     return {'req_products': related_products}
+
+
