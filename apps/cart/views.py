@@ -2,7 +2,7 @@ import random
 from django.shortcuts import render, get_object_or_404
 
 from .cart import Cart
-from apps.store.models import Product
+from apps.store.models import Product, FooterPayBrands
 
 
 
@@ -16,9 +16,12 @@ def cart_detail(request):
 
         productsstring = productsstring + b
 
+    footer_brand_pay_images = FooterPayBrands.objects.all()
+
     context = {
         'cart': cart,
         'productsstring': productsstring.rstrip(','),
+        'pay_images_footer': footer_brand_pay_images,
 
     }
     return render(request, 'cart.html', context)

@@ -119,7 +119,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="brator-cart-list-items-price">
-                                                    <p><sup>[[ product.price ]]so'm</sup></p>
+                                                    <p><sup>[[ product.price.toLocaleString() ]]so'm</sup></p>
                                                 </div>
                                                 <div class="brator-cart-list-items-qty-area">
                                                     
@@ -132,7 +132,7 @@
                                                     
                                                 </div>
                                                 <div class="brator-cart-list-items-subtotal">
-                                                    <p>[[ product.total_price ]]so'm</p>
+                                                    <p>[[ product.total_price.toLocaleString() ]]so'm</p>
                                                 </div>
                                                 
                                                     <div class="brator-cart-list-items-removed">
@@ -257,7 +257,7 @@
                                     <p>Chegirma</p><span>- 0.00so'm</span>
                                 </div>
                                 <div class="cart-total-subtotal item-ditels-cart-total">
-                                    <p>Jami Narx</p><span>[[ totalCost ]]</span>
+                                    <p>Jami Narx</p><span>[[ totalCost.toLocaleString() ]]</span>
                                 </div>
                             </div>
                             <div class="cart-total-shiping">
@@ -268,15 +268,18 @@
                                 </select>
                             </div>
                             <div class="cart-total-amount">
-                                <p>Jami</p><span>[[ totalCost ]]so'm</span>
+                                <p>Jami</p><span>[[ totalCost.toLocaleString() ]]so'm</span>
                             </div>
                             <div class="cart-total-process">
                                 <button>Toʻlovga oʻtish</button>
                             </div>
                             <div class="cart-total-accpect-payment">
                                 <p>To'lov usullarini qabul qiling</p>
-                                <div class="list-img-pay"><a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/footer/paypal.png" alt="logo" /></a><a href="#_"><img src="./assets/images/footer/master.png" alt="logo" /></a><a href="#_"><img src="./assets/images/footer/visa.png" alt="logo" /></a><a href="#_"><img src="./assets/images/footer/stripe.png" alt="logo" /></a><a href="#_"><img src="./assets/images/footer/klarna.png" alt="logo" /></a>
+                                {% for pay_images in pay_images_footer %}
+                                <div class="list-img-pay">
+                                        <a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ pay_images.image.url }}" alt="logo" /></a>
                                 </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -306,7 +309,7 @@
         },
         computed: {
             numItems: function() {
-                return store.state.numItems
+                return store.state.numItems.toLocaleString()
             },
             totalCost: function() {
                 return store.state.totalCost
