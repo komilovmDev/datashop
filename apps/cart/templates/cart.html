@@ -111,7 +111,10 @@
                                             <div v-for="product in products" class="brator-cart-list-items">
                                                 <div class="brator-cart-list-items-title">
                                                     <div class="img-cart">
-                                                        <a href="#"><img class="lazyload" src="[[ product.image ]]" alt="alt" /></a>
+                                                        {% comment %} <a href="#"><img class="lazyload" src="product.image" alt="alt" /></a> {% endcomment %}
+
+                                                        <img :src="product.image" width="100" height="50">
+
                                                     </div>
                                                     <div class="prodct-info">
                                                         <h5><a href="#_">[[ product.title ]]</a></h5>
@@ -251,13 +254,13 @@
                             </div>
                             <div class="cart-total-cost">
                                 <div class="cart-total-before-dis item-ditels-cart-total">
-                                    <p>Chegirma oldidan jami</p><span>$843.19</span>
+                                    <p>Chegirma oldidan jami</p><span>[[ totalCost.toLocaleString() ]]</span>
                                 </div>
                                 <div class="cart-total-dis item-ditels-cart-total">
                                     <p>Chegirma</p><span>- 0.00so'm</span>
                                 </div>
                                 <div class="cart-total-subtotal item-ditels-cart-total">
-                                    <p>Jami Narx</p><span>[[ totalCost.toLocaleString() ]]</span>
+                                    <p>Jami Narx</p><span>[[ totalCost.toLocaleString() ]]so'm</span>
                                 </div>
                             </div>
                             <div class="cart-total-shiping">
@@ -275,11 +278,11 @@
                             </div>
                             <div class="cart-total-accpect-payment">
                                 <p>To'lov usullarini qabul qiling</p>
-                                {% for pay_images in pay_images_footer %}
                                 <div class="list-img-pay">
-                                        <a href="#_"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ pay_images.image.url }}" alt="logo" /></a>
+                                    {% for pay_images in pay_images_footer %}
+                                        <a href="#_"><img class="lazyload" src="{{ pay_images.image.url }}" data-src="{{ pay_images.image.url }}" alt="logo" /></a>
+                                    {% endfor %}
                                 </div>
-                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -309,11 +312,12 @@
         },
         computed: {
             numItems: function() {
-                return store.state.numItems.toLocaleString()
+                return store.state.numItems
             },
             totalCost: function() {
                 return store.state.totalCost
-            }
+            },
+            
         },
         methods: {
             submitForm() {
