@@ -1,4 +1,6 @@
 import random
+from datetime import datetime
+
 
 from django.shortcuts import render, get_object_or_404
 
@@ -28,6 +30,10 @@ def product_detail(request, category_slug, slug):
     product = get_object_or_404(Product, slug=slug)
 
     footer_brand_pay_images = FooterPayBrands.objects.all()
+
+    product.num_visits = product.num_visits + 1
+    product.last_visit = datetime.now()
+    product.save()
 
     # r = Recommender()
     # recommended_products = r.suggest_products_for([product], 4)

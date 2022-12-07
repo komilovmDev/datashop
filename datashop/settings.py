@@ -139,7 +139,11 @@ TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
+USE_L10N=False
+
 USE_TZ = True
+
+USE_THOUSAND_SEPARATOR=True
 
 
 # Static files (CSS, JavaScript, Images)

@@ -612,14 +612,10 @@
     <script src="https://unpkg.com/vuex@3.5.1/dist/vuex.js"></script>
     <script>
 
-        var get_total_length = '{{ cart.get_total_length }}'
-        var get_total_cost = '{{ cart.get_total_cost| floatformat:0 |intcomma }}'
-
-
         var store = new Vuex.Store({
             state: {
-                numItems: get_total_length,
-                totalCost: '{{ cart.get_total_cost| floatformat:0 |intcomma }}',
+                numItems: {{ cart.get_total_length }},
+                totalCost: parseFloat({{ cart.get_total_cost |floatformat| intcomma }}),
             },
             mutations: {
                 increment(state, quantity) {

@@ -8,6 +8,9 @@ def frontpage(request):
     banner_image = BannerHome.objects.all()
     brand_image = TanilganBrendlar.objects.all()
 
+    popular_products = Product.objects.all().order_by('-num_visits')[0:4]
+    recently_viewed_products = Product.objects.all().order_by('-last_visit')[0:4]
+
     footer_brand_pay_images = FooterPayBrands.objects.all()
 
     context = {
@@ -16,6 +19,8 @@ def frontpage(request):
         'pay_images_footer': footer_brand_pay_images,
         'banner_image': banner_image,
         'brand_image': brand_image,
+        'popular_products': popular_products,
+        'recently_viewed_products': recently_viewed_products,
         
     }
 

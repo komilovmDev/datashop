@@ -79,7 +79,10 @@ class Cart(object):
         #     return sum(float(item['total_price']) for item in self.cart.values())
         # else:
         #     return 0
-
+        
+        
 
         return sum(float(item['total_price']) for item in self)
+        # javob = sum(float(item['total_price']) for item in self)
+        # return intcomma('12221')
             
