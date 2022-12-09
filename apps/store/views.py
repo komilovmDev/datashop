@@ -4,7 +4,7 @@ from datetime import datetime
 
 from django.shortcuts import render, get_object_or_404
 
-from .models import Product, Category, FooterPayBrands
+from .models import Product, Category, FooterPayBrands, ProductImage
 from .recommender import Recommender
 
 from django.db.models import Q
@@ -31,6 +31,8 @@ def product_detail(request, category_slug, slug):
 
     footer_brand_pay_images = FooterPayBrands.objects.all()
 
+    photos = ProductImage.objects.filter(product=product)
+
     product.num_visits = product.num_visits + 1
     product.last_visit = datetime.now()
     product.save()
@@ -43,6 +45,7 @@ def product_detail(request, category_slug, slug):
         related_products = random.sample(related_products, 3)
 
     context = {
+        'photos': photos,
         'product': product,
         'pay_images_footer': footer_brand_pay_images,
         # 'recommended_products': recommended_products,

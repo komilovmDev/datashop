@@ -14,12 +14,15 @@
                 <div class="col-lg-12">
                     <div class="brator-breadcrumb">
                         <ul>
-                            <li><a href="#">Home</a></li>
+                            <li><a href="{% url 'frontpage' %}">Asosiy</a></li>
                             {% comment %} {% if product.category.parent %}
                                 <li><a href="#">{{ product.category.parent.name }} </a></li>
                             {% endif %} {% endcomment %}
-                            <li><a href="#">{{ product.category.name }} </a></li>
-                            <li><a href="#">{{ product.title }} </a></li>
+                            {% if product.category.parent %}
+                                <li><a href="{% url 'category_detail' product.category.parent.slug %}">{{ product.category.parent.title }}</a></li>
+                            {% endif %}
+                            <li><a href="{% url 'category_detail' product.category.slug %}">{{ product.category.title }}</a></li>
+                            <li><a href="{% url 'product_detail' product.category.slug product.slug %}">{{ product.title }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -33,6 +36,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="brator-product-header-layout">
+
                             <div class="brator-product-header-layout-img">
                                 <div class="brator-product-img-tab-list js-tabs" id="tabs-product-img">
                                     <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /></div>
@@ -42,13 +46,16 @@
                                     <div class="brator-product-img-tab-header js-tabs__header">
                                         <ul>
                                             <li><a class="js-tabs__title lazyload" href="#" data-bg="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}"></a></li>
-                                            <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-02.jpeg"></a></li>
-                                            <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-03.jpeg"></a></li>
-                                            <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-04.jpeg"></a></li>
+                                            {% for photo in photos %}
+                                                <li><a class="js-tabs__title lazyload" href="#" data-bg="{{ photo.image.url }}"></a></li>
+                                            {% endfor %}
+                                            {% comment %} <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-03.jpeg"></a></li>
+                                            <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-04.jpeg"></a></li> {% endcomment %}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="brator-product-layout-header-content">
                                 <div class="brator-product-hero-content">
                                     <div class="brator-product-hero-content-info">
