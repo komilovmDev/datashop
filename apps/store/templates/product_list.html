@@ -165,7 +165,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="brator-filter-item-area">
+                                {% comment %} <div class="brator-filter-item-area">
                                     <div class="brator-filter-item-title current">
                                         <h4>Diameter</h4>
                                         <button class="ac-trigger">
@@ -522,7 +522,7 @@
                                             <div class="brator-filter-item-check-box-content"><span class="brator-name">Castrol</span></div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                         </div>
                     </div>
@@ -806,6 +806,7 @@
                                         </div> {% endcomment %}
                                         <div class="brator-product-single-item-featu">
                                             <div class="brator-product-single-item-featu-single">
+                                                {% comment %} <p>{{ product.description|truncatewords:20|safe }}</p> {% endcomment %}
                                                 {{ product.description|truncatewords:20|safe }}
                                             </div>
                                             
