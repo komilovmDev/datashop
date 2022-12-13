@@ -15,6 +15,11 @@
     <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/png" />
     <!-- Google Font-->
     <link href="https://fonts.googleapis.com/css?display=swap&amp;family=Inter:300,400,500,600,700,800" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     
     <!-- bootstrap grid-->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap-grid.min.css' %}" />
@@ -33,7 +38,6 @@
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/appbar.css' %}" />
-
     
 
 </head>
@@ -86,7 +90,7 @@
             <div class="row">
                 <div class="col-lg-12 col-xl-3">
                     <div class="brator-logo-area">
-                        <div class="brator-infobox__btn" id="infobox__toggle-js">
+                        <div class="brator-infobox__btn">
                             <svg x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
                                 <g>
                                     <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
@@ -609,6 +613,7 @@
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <script src="https://unpkg.com/vuex@3.5.1/dist/vuex.js"></script>
     <script>
 
@@ -646,6 +651,7 @@
     {% block scripts %}
     {% endblock scripts %}
 
+    
 </body>
 
 </html>

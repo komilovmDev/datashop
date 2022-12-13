@@ -287,6 +287,12 @@
         });
     }
 
+	if ($('.bx bx-search-alt-2').length) {
+        $('.bx bx-search-alt-2').on('click', function(e) {
+            $('.h-infobox__wrapper').toggleClass('open');
+        });
+    }
+
 
 	if($('.brator-cart-link').length){
 		$('.brator-cart-link a').on('click', function(e) {
