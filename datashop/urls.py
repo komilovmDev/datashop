@@ -20,7 +20,7 @@ from django.conf import settings
 
 
 from apps.cart.views import cart_detail
-from apps.core.views import frontpage, contact, about, login
+from apps.core.views import frontpage, contact, about, login, auth
 from apps.store.views import product_detail, category_detail, product_list, product_list_colm, search
 
 from apps.store.api import api_add_to_cart, api_remove_from_cart, api_checkout
@@ -32,6 +32,7 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('about/', about, name='about'),
     path('login/', login, name='login'),
+    path('auth/', auth, name='auth'),
     path('yangi-mahsulotlar/', product_list, name='product_list'),
     path('yangi-mahsulotlar-colm/', product_list_colm, name='product_list_colm'),
     path('admin/', admin.site.urls),

@@ -11,20 +11,28 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'assets/css/auth-style.css' %}">
-    <title>Kirish | DataShop</title>
+    <title>Ro'yxatdan otish | DataShop</title>
 </head>
 
 
 <body>
     <div class="container">
-        <img src="{% static 'img/datalogo.png' %}" alt="" class="title">
+        <a href="{% url 'frontpage' %}"><img src="{% static 'img/datalogo.png' %}" alt="" class="title"></a>
         <div class="inputs">
-            
+            <div class="email-input">
+                <p class="input-title">Ismingiz?</p>
+                <div class="user">
+                    <i class="fa-solid fa-user"></i>
+                   <input class="input" type="text" placeholder="Type your email"> 
+                </div>
+                
+            </div>
+
             <div class="email-input">
                 <p class="input-title">Email</p>
                 <div class="user">
                     <i class="fa-solid fa-user"></i>
-                   <input class="input" type="text" placeholder="Email adresingizni kiriting"> 
+                   <input class="input" type="text" placeholder="Type your email"> 
                 </div>
                 
             </div>
@@ -33,14 +41,20 @@
                 <p class="input-title">Password</p>
                 <div class="lock">
                     <i class="fa-solid fa-lock"></i>
-                    <input class="input" type="password" placeholder="Parol ornating">
+                    <input class="input" type="password" placeholder="Type your password">
                 </div>
             </div>
+            <div class="email-input">
+                <p class="input-title">Again Password</p>
+                <div class="lock">
+                    <i class="fa-solid fa-lock"></i>
+                    <input class="input" type="password" placeholder="Type your password">
+                </div>
+                
+            </div>
         </div>
-        <a href="#" class="password-no">Parol estan chiqdimi?</a>
         <button class="btn">Kirish</button>
-        <p class="dd">Ichtimoiy tarmoqlar orqali<br>Ro'yxatdan otish</p>
-
+        <p class="dd">Ichtimoiy tarmoqlar orqali<br>Ro'yxatdan Oting</p>
         <div class="icons">
             <i class="fa-brands fa-facebook-f"></i>
             <i class="fa-brands fa-twitter"></i>
@@ -53,7 +67,5 @@
 
     </div>
 </body>
-
-</html>
 
 </html>

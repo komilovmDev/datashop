@@ -12,6 +12,7 @@
   text-transform: capitalize;
   transition: 0.3s;
 }
+
 .button-fill-one:hover, .brator-product-single-frequently-total button:hover, .brator-product-header-layout-area.desing-two .brator-product-add-to-cart .brator-product-add-to-cart-button-added button:hover, .brator-product-hero-content .brator-product-hero-content-add-to-cart .brator-product-single-cart-count-add .brator-product-single-cart-add button:hover, .cart-total-area .cart-total-process button:hover, .brator-cart-info .brator-cart-checkout .brator-cart-checkout-right .brator-cart-checkout-back a:hover, .brator-cart-info .brator-cart-checkout .brator-cart-checkout-left .brator-cart-checkout-fields button:hover, .brator-filter-item-content-area .brator-rang-item-input .brator-rang-item-input-single-btn button.ac-trigger:hover, .brator-current-vehicle .brator-current-vehicle-content a:hover, .brator-parts-search-box-area.design-two .brator-parts-search-box-form button:hover, .brator-banner-area.design-two .brator-banner-content .brator-banner-content-action a:hover, .brator-parts-search-box-area.design-one .brator-parts-search-box-form button:hover, .product-list-items.type-list .brator-product-single-item-area.design-three .brator-product-single-item-area-right .brator-product-single-item-btn .brator-product-single-item-btn-cart button:hover, .brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-btn a:hover, .brator-offer-box-two a:hover, .brator-offer-box-one a:hover, .brator-coming-soon-area .brator-coming-soon-subs-area .brator-sub-form .news-letter-form button.wpcf7-form-control.wpcf7-submit:hover, .brator-newsletter-form.design-one .news-letter-form button:hover, .brator-newsletter-box .brator-newsletter-box-content button.wpcf7-submit:hover, .brator-contact-form-fields .brator-contact-form-field button:hover, .brator-footer-top-element .brator-sub-form button:hover, .brator-cart-item-list .brator-cart-total-money .brator-cart-total-action a:hover {
   background: #000;
   border: 2px solid #000;
@@ -1846,6 +1847,7 @@ button.scroll-top span {
 .brator-header-area.header-one {
   padding-top: 35px;
   padding-bottom: 15px;
+
 }
 .brator-header-area.header-one .row {
   align-items: flex-start;

@@ -39,3 +39,6 @@ def about(request):
 def login(request):
     return render(request, 'login.html')
 
+
+def auth(request):
+    return render(request, 'auth.html')
