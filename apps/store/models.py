@@ -63,6 +63,7 @@ class BannerHome(models.Model):
 
     title = models.CharField(max_length=255)
     chegirma = models.CharField(max_length=13)
+    foyiz = models.IntegerField(max_length=34)
     bg_image = models.ImageField(upload_to='banners/')
     image = models.ImageField(upload_to='banners/', blank=True, null=True)
 
