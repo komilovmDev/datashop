@@ -84,6 +84,7 @@ class FooterPayBrands(models.Model):
 
     class Meta:
         verbose_name = 'Tolov turlari, Footerqismi'
+        verbose_name_plural = 'Tolov turlari, Footerqismlari'
 
     def __str__(self):
         return self.title
