@@ -26,7 +26,7 @@
                                             <span class="sub-title"></span>
                                             <h1 class="title">${{ banner.foyiz }}</h1>
                                             <h4 class="title">{{ banner.title }}<span>Shoshiling!</span></h4>
-                                            <p>{{ banner.title_des }}</p>
+                                            {{ banner.title_des| safe }}
                                         </div>
                                         <div class="brator-megasell-thumb">
                                             <img class="lazyload" src="" data-src="{{ banner.image.url }}" alt="re">
