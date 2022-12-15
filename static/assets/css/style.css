@@ -35,6 +35,7 @@ body{
   outline: none;
   padding: 10px;
   width: 300px;
+  font-size: 18px;
 }
 .password-no{
   text-align: right;
