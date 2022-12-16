@@ -47,7 +47,7 @@
                                         <ul>
                                             <li><a class="js-tabs__title lazyload" href="#" data-bg="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}"></a></li>
                                             {% for photo in photos %}
-                                                <li><a class="js-tabs__title lazyload" href="#" data-bg="{{ photo.image.url }}"></a></li>
+                                                <li><a class="js-tabs__title lazyload" href="#" data-bg="{{ photo.images.url }}"></a></li>
                                             {% endfor %}
                                             {% comment %} <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-03.jpeg"></a></li>
                                             <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-04.jpeg"></a></li> {% endcomment %}
