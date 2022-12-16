@@ -23,9 +23,9 @@
                                 {% for banner in banner_image %}
                                     <div class="brator-megasell-box  design-one splide__slide">
                                         <div class="brator-megasell-content-box">
-                                            <span class="sub-title"></span>
+                                            {% comment %} <span class="sub-title"></span> {% endcomment %}
                                             <h1 class="title">${{ banner.foyiz }}</h1>
-                                            <h4 class="title">{{ banner.title }}<span>Shoshiling!</span></h4>
+                                            <h4 class="title">{{ banner.title }}<span></span></h4>
                                             {{ banner.title_des| safe }}
                                         </div>
                                         <div class="brator-megasell-thumb">
