@@ -317,7 +317,7 @@
                                     <div class="mega-menu-area">
                                         <div class="mega-menu-cat-list">
                                             <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
-                                                {% for category in menu_categories %}
+                                                {% for category in cat_4 %}
                                                     <a href="{% url 'category_detail' category.slug %}"><img src="{% if category.image %}{{ category.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ category.title }}</span></a>
                                                 {% endfor %}
                                             </div>
@@ -410,7 +410,7 @@
                                     <div class="mega-menu-area">
                                         <div class="mega-menu-cat-list">
                                             <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
-                                                {% for category in menu_categories %}
+                                                {% for category in cat_4 %}
                                                     <a href="{% url 'category_detail' category.slug %}"><img src="{% if category.image %}{{ category.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ category.title }}</span></a>
                                                 {% endfor %}
                                             </div>
