@@ -39,12 +39,11 @@
 
                             <div class="brator-product-header-layout-img">
                                 <div class="brator-product-img-tab-list js-tabs" id="tabs-product-img">
-                                    {% comment %} <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{{ product.image.url }}" alt="alt" /></div> {% endcomment %}
+
+                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ product.image.url }}"  alt="alt" /></div>
                                     {% for photo in photos %}
-                                        <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="{{ photo.images.url }}"  data-src="{{ photo.images.url }}" alt="alt" /></div>
+                                        <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{{ photo.images.url }}" alt="alt" /></div>
                                     {% endfor %}
-                                    {% comment %} <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/product-tab-img-03.jpeg" alt="alt" /></div>
-                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/product-tab-img-04.jpeg" alt="alt" /></div> {% endcomment %}
 
                                     <div class="brator-product-img-tab-header js-tabs__header">
                                         <ul>
