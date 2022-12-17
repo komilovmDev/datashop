@@ -313,7 +313,7 @@
                                     </ul> {% endcomment %}
                                 </li>
                                 {% comment %} <li><a href="about.html">About us</a></li> {% endcomment %}
-                                <li class="mega-menu-li"><a href="#_">🛒 Katalog<span class="count-hot-beg">MEGA</span></a>
+                                <li class="mega-menu-li"><a href="#_">🛒 Katalog</a>
                                     <div class="mega-menu-area">
                                         <div class="mega-menu-cat-list">
                                             <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
@@ -322,14 +322,14 @@
                                                 {% endfor %}
                                             </div>
                                             <div class="mega-menu-cat-list-mdl mega-menu-cat-list-single-area">
-                                                {% comment %} {% for c8 in four_to_8_cat %}
-                                                    <a href="{{ c8.get_absolute_url }}"><img src="{% if c8.image %}{{ c8.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8.name }}</span></a>
-                                                {% endfor %} {% endcomment %}
+                                                {% for c8 in menu_4_8 %}
+                                                    <a href="{% url 'category_detail' c8.slug %}"><img src="{% if c8.image %}{{ c8.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8.title }}</span></a>
+                                                {% endfor %}
                                             </div>
                                             <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
-                                                {% comment %} {% for c8_12 in four_to_8_12_cat %}
-                                                    <a href="{{ c8_12.get_absolute_url }}"><img src="{% if c8_12.image %}{{ c8_12.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8_12.name }}</span></a>
-                                                {% endfor %} {% endcomment %}
+                                                {% for c8_12 in four_to_8_12_cat %}
+                                                    <a href="{% url 'category_detail' c8_12.slug %}"><img src="{% if c8_12.image %}{{ c8_12.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8_12.title }}</span></a>
+                                                {% endfor %}
                                             </div>
                                         </div>
                                         {% comment %} <div class="mega-menu-offer">
@@ -406,7 +406,7 @@
                                         <li><a href="index-3.html">Home 3</a></li>
                                     </ul> {% endcomment %}
                                 </li>
-                                <li class="mega-menu-li"><a href="#_">🛒 Katalog<span class="count-hot-beg">MEGA</span></a>
+                                <li class="mega-menu-li"><a href="#_">🛒 Katalog</a>
                                     <div class="mega-menu-area">
                                         <div class="mega-menu-cat-list">
                                             <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
@@ -415,14 +415,14 @@
                                                 {% endfor %}
                                             </div>
                                             <div class="mega-menu-cat-list-mdl mega-menu-cat-list-single-area">
-                                                {% comment %} {% for c8 in four_to_8_cat %}
-                                                    <a href="{{ c8.get_absolute_url }}"><img src="{% if c8.image %}{{ c8.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8.name }}</span></a>
-                                                {% endfor %} {% endcomment %}
+                                                {% for c8 in menu_4_8 %}
+                                                    <a href="{% url 'category_detail' c8.slug %}"><img src="{% if c8.image %}{{ c8.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8.title }}</span></a>
+                                                {% endfor %}
                                             </div>
                                             <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
-                                                {% comment %} {% for c8_12 in four_to_8_12_cat %}
-                                                    <a href="{{ c8_12.get_absolute_url }}"><img src="{% if c8_12.image %}{{ c8_12.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8_12.name }}</span></a>
-                                                {% endfor %} {% endcomment %}
+                                                {% for c8_12 in four_to_8_12_cat %}
+                                                    <a href="{% url 'category_detail' c8_12.slug %}"><img src="{% if c8_12.image %}{{ c8_12.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8_12.title }}</span></a>
+                                                {% endfor %}
                                             </div>
                                         </div>
                                         {% comment %} <div class="mega-menu-offer">
