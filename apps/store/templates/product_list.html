@@ -93,7 +93,7 @@
                                                 </svg>
                                                 <ul>
                                                     {% for subcategory in c.children.all %}
-                                                        <li><a href="{{ subcategory.get_absolute_url }}">{{subcategory.title}}</a></li>
+                                                        <li><a href="{% url 'category_detail' subcategory.slug %}">{{subcategory.title}}</a></li>
                                                     {% endfor %}
                                                     
                                                 </ul>
