@@ -110,19 +110,21 @@
                                                 <li><a href="#_">Tires</a></li>
                                                 <li><a href="#_">wheels</a></li>
                                             </ul>
-                                        </li>
-                                        <li class="sub-cat"><a href="index-3.html">Tires</a>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
-                                            </svg>
-                                            <ul>
-                                                <li><a href="#_">Tires</a></li>
-                                                <li><a href="index-3.html">wheels</a></li>
-                                                <li><a href="#_">Tires</a></li>
-                                                <li><a href="#_">wheels</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#_">Clearance</a></li> {% endcomment %}
+                                                </li>
+                                            {% else %}
+                                                <li class="sub-cat"><a href="#">{{ category.title }}</a>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
+                                                </svg>
+                                                <ul>
+                                                    {% for subcategory in category.children.all %}
+                                                        <li><a href="{% url 'category_detail' subcategory.slug %}">{{subcategory.title}}</a></li>
+                                                    {% endfor %}
+                                                    
+                                                </ul>
+                                            {% endif %}
+
+
                                     </ul>
                                 </div>
                             </div>
@@ -762,6 +764,10 @@
                             </div>
                         </div>
                     </div>
+
+
+
+
                     {% comment %} Product royxati {% endcomment %}
                     <div class="product-list-items type-list">
                         {% for product in products %}

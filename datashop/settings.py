@@ -61,6 +61,8 @@ INSTALLED_APPS = [
     'apps.order',
     'apps.store',
     'apps.tgbot',
+    'users',
+
 ]
 
 MIDDLEWARE = [
