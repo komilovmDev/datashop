@@ -33,6 +33,7 @@
     <!-- Theme style For Home Two-->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme-style-home-two.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme-style-home-one.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/base.css' %}" />
     <!--    <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" />-->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/url.css' %}" />
     <!-- box icons -->
@@ -316,20 +317,48 @@
                                 <li class="mega-menu-li"><a href="#_">🛒 Katalog</a>
                                     <div class="mega-menu-area">
                                         <div class="mega-menu-cat-list">
-                                            <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
-                                                {% for category in cat_4 %}
-                                                    <a href="{% url 'category_detail' category.slug %}"><img src="{% if category.image %}{{ category.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ category.title }}</span></a>
-                                                {% endfor %}
-                                            </div>
-                                            <div class="mega-menu-cat-list-mdl mega-menu-cat-list-single-area">
-                                                {% for c8 in menu_4_8 %}
-                                                    <a href="{% url 'category_detail' c8.slug %}"><img src="{% if c8.image %}{{ c8.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8.title }}</span></a>
-                                                {% endfor %}
-                                            </div>
-                                            <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
-                                                {% for c8_12 in four_to_8_12_cat %}
-                                                    <a href="{% url 'category_detail' c8_12.slug %}"><img src="{% if c8_12.image %}{{ c8_12.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8_12.title }}</span></a>
-                                                {% endfor %}
+                                            <div class="sidebar">
+                                                <ul class="categori">
+                                                    <li data-target="Elektronika" href="#" class="link"> <span class="icon" >  <i class="fa-solid fa-headphones"></i> Elektronika </span> <i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Monitor" href="#" class="link"> <span class="icon" > <i class="fa-solid fa-display"></i> Monitor </span>  <i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Notebook" href="#" class="link"> <span class="icon">  <i class="fa-solid fa-laptop"></i> Notebook </span><i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Mishka" href="#" class="link"> <span class="icon">  <i class="fa-solid fa-computer-mouse"></i> Mishka </span><i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Klaviatura" href="#" class="link"> <span class="icon">  <i class="fa-solid fa-keyboard"></i> Klaviatura  </span><i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Kuller" href="#" class="link"> <span class="icon">   <i class="fa-solid fa-fan"></i> Kuller </span> <i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Pastavka" href="#" class="link"> <span class="icon"> <i class="fa-solid fa-grip"></i> Pastavka </span>  <i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Quloqchin" href="#" class="link"> <span class="icon"> <i class="fa-solid fa-headphones"></i> Quloqchin </span> <i class="fa-solid fa-chevron-right"></i></li>
+                                                </ul>
+                                                <div class="main">
+                                                    <section id="Elektronika">
+                                                        <h1>Elektronika</h1>
+                                                    </section>
+                                            
+                                                    <section id="Monitor">
+                                                        <h1>Monitor</h1>
+                                                    </section>
+                                            
+                                                    <section id="Notebook">
+                                                        <h1>Notebook</h1>
+                                                    </section>
+                                                    <section id="Mishka">
+                                                        <h1>Mishka</h1>
+                                                    </section>
+                                            
+                                                    <section id="Klaviatura">
+                                                        <h1>Klaviatura</h1>
+                                                    </section>
+                                            
+                                                    <section id="Kuller">
+                                                        <h1>Kuller</h1>
+                                                    </section>
+                                                    <section id="Pastavka">
+                                                        <h1>Pastavka</h1>
+                                                    </section>
+                                                    <section id="Quloqchin">
+                                                        <h1>Quloqchin</h1>
+                                                    </section>
+                                                    
+                                                </div>
                                             </div>
                                         </div>
                                         {% comment %} <div class="mega-menu-offer">
@@ -340,7 +369,6 @@
                                                 <h6><span>$89.90</span><span>$250.80</span></h6><a href="shop-sub-category.html">Shop Now</a>
                                             </div>
                                         </div> {% endcomment %}
-                                    </div>
                                 </li>
                                 {% comment %} <li class="down-menu">
                                     <a href="#_">Blog</a>
@@ -409,31 +437,58 @@
                                 <li class="mega-menu-li"><a href="#_">🛒 Katalog</a>
                                     <div class="mega-menu-area">
                                         <div class="mega-menu-cat-list">
-                                            <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
-                                                {% for category in cat_4 %}
-                                                    <a href="{% url 'category_detail' category.slug %}"><img src="{% if category.image %}{{ category.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ category.title }}</span></a>
-                                                {% endfor %}
-                                            </div>
-                                            <div class="mega-menu-cat-list-mdl mega-menu-cat-list-single-area">
-                                                {% for c8 in menu_4_8 %}
-                                                    <a href="{% url 'category_detail' c8.slug %}"><img src="{% if c8.image %}{{ c8.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8.title }}</span></a>
-                                                {% endfor %}
-                                            </div>
-                                            <div class="mega-menu-cat-list-end mega-menu-cat-list-single-area">
-                                                {% for c8_12 in four_to_8_12_cat %}
-                                                    <a href="{% url 'category_detail' c8_12.slug %}"><img src="{% if c8_12.image %}{{ c8_12.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /><span>{{ c8_12.title }}</span></a>
-                                                {% endfor %}
-                                            </div>
-                                        </div>
-                                        {% comment %} <div class="mega-menu-offer">
-                                            <div class="brator-offer-box-two lazyload" data-bg="assets/images/offer/offer-02.png" >
-                                                <div class="budget-area"><span>mega bundle</span></div>
-                                                <h2>Helix Engine Fluids</h2>
-                                                <p>Pack 3pcs just:</p>
-                                                <h6><span>$89.90</span><span>$250.80</span></h6><a href="shop-sub-category.html">Shop Now</a>
-                                            </div>
-                                        </div> {% endcomment %}
-                                    </div>
+                                            <div class="sidebar">
+                                                <ul class="categori">
+                                                    <li data-target="Elektronika" href="#" class="link"> <span class="icon" >  <i class="fa-solid fa-headphones"></i> Elektronika </span> <i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Monitor" href="#" class="link"> <span class="icon" > <i class="fa-solid fa-display"></i> Monitor </span>  <i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Notebook" href="#" class="link"> <span class="icon">  <i class="fa-solid fa-laptop"></i> Notebook </span><i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Mishka" href="#" class="link"> <span class="icon">  <i class="fa-solid fa-computer-mouse"></i> Mishka </span><i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Klaviatura" href="#" class="link"> <span class="icon">  <i class="fa-solid fa-keyboard"></i> Klaviatura  </span><i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Kuller" href="#" class="link"> <span class="icon">   <i class="fa-solid fa-fan"></i> Kuller </span> <i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Pastavka" href="#" class="link"> <span class="icon"> <i class="fa-solid fa-grip"></i> Pastavka </span>  <i class="fa-solid fa-chevron-right"></i></li>
+                                                    <li data-target="Quloqchin" href="#" class="link"> <span class="icon"> <i class="fa-solid fa-headphones"></i> Quloqchin </span> <i class="fa-solid fa-chevron-right"></i></li>
+                                                </ul>
+                                                                                    <div class="main">
+                                                                                        <section id="Elektronika">
+                                                                                            <h1>Elektronika</h1>
+                                                                                        </section>
+                                                                                
+                                                                                        <section id="Monitor">
+                                                                                            <h1>Monitor</h1>
+                                                                                        </section>
+                                                                                
+                                                                                        <section id="Notebook">
+                                                                                            <h1>Notebook</h1>
+                                                                                        </section>
+                                                                                        <section id="Mishka">
+                                                                                            <h1>Mishka</h1>
+                                                                                        </section>
+                                                                                
+                                                                                        <section id="Klaviatura">
+                                                                                            <h1>Klaviatura</h1>
+                                                                                        </section>
+                                                                                
+                                                                                        <section id="Kuller">
+                                                                                            <h1>Kuller</h1>
+                                                                                        </section>
+                                                                                        <section id="Pastavka">
+                                                                                            <h1>Pastavka</h1>
+                                                                                        </section>
+                                                                                        <section id="Quloqchin">
+                                                                                            <h1>Quloqchin</h1>
+                                                                                        </section>
+                                                                                        
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            {% comment %} <div class="mega-menu-offer">
+                                                                                <div class="brator-offer-box-two lazyload" data-bg="assets/images/offer/offer-02.png" >
+                                                                                    <div class="budget-area"><span>mega bundle</span></div>
+                                                                                    <h2>Helix Engine Fluids</h2>
+                                                                                    <p>Pack 3pcs just:</p>
+                                                                                    <h6><span>$89.90</span><span>$250.80</span></h6><a href="shop-sub-category.html">Shop Now</a>
+                                                                                </div>
+                                                                            </div> {% endcomment %}
                                 </li>
                                 {% comment %} <li class="down-menu">
                                     <a href="#_">Blog</a>
@@ -605,6 +660,7 @@
     <script src="{% static 'assets/js/addIndicators.js' %}"></script>
     <script src="{% static 'assets/js/animation.gsap.js' %}"></script>
     <script src="{% static 'assets/js/brator-script.js' %}"></script>
+    <script src="{% static 'assets/js/base.js' %}"></script>
     <script>
         window.replainSettings = { id: '48dd714f-b47f-4393-81df-5184dcf21942' };
         (function(u){var s=document.createElement('script');s.async=true;s.src=u;

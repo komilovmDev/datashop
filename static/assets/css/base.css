@@ -1,0 +1,73 @@
+.sidebar{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: flex-start;
+  } 
+  .visible {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  section {
+    display: none;
+    
+  }
+  .categori{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    border-right: 1px solid  rgba(99, 99, 99, 0.679);
+ 
+  }
+  .link{
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 5px 13px;
+    width: 250px;
+    color: rgb(41, 41, 41);
+    cursor: pointer;
+  }
+  .link.i{
+    color: rgb(41, 41, 41);
+  
+  }
+  .link:hover{
+    background-color: rgba(128, 128, 128, 0.087);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #ff2726;
+  }
+  .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .fa-display{
+    color: blue;
+  }
+  .fa-laptop{
+    color: blueviolet;
+  }
+  .fa-computer-mouse{
+    color: rgb(180, 20, 140);
+  }
+  .fa-keyboard{
+    color: rgb(180, 113, 20);
+  }
+  .fa-fan{
+    color: rgb(20, 177, 180);
+  }
+  .fa-grip{
+    color: rgb(180, 20, 20);
+  }
+  .fa-headphones{
+    color: rgb(28, 94, 209);
+  }
