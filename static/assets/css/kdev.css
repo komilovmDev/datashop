@@ -1,0 +1,64 @@
+.brator-megasell-box {
+    height: 500px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 150px;
+}
+
+.brator-megasell-thumb {
+
+}
+
+.brator-megasell-thumb img{
+    width: 600px;
+}   
+
+.splide__list .brator-product-single-item-area {
+
+    max-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1200px) {
+    .brator-megasell-area .brator-megasell-box {
+        padding: 60px 100px 80px;
+        gap: 0;
+        height: 900px;
+    }
+    .brator-megasell-content-box {
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (min-width:310px) and ( max-width: 375px ){
+    .brator-megasell-box {
+        gap: 0;
+    }
+    .brator-megasell-area .brator-megasell-box {
+        padding: 60px 40px 0px;
+        padding-bottom: 60px;
+        height: 600px;
+    }
+    .brator-megasell-content-box {
+        padding-bottom: 100px;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 767px) {
+    .brator-megasell-area .brator-megasell-box {
+        padding: 60px 40px 0px;
+        gap: 0px;
+        padding-bottom: 150px;
+        height: 600px;
+    }
+    .brator-megasell-content-box {
+        padding-bottom: 0px;
+    }
+    .brator-megasell-thumb img{
+        padding-top: 10px;
+    }   
+
+}
