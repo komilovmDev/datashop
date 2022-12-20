@@ -17,3 +17,4 @@ function showPage(target) {
 }
 
 showPage('Elektronika')
+
