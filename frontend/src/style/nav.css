@@ -1,0 +1,44 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.navTop {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+    background-color: #ff201f;
+    color: #FFFFFF;
+}
+
+.navTopRight {
+    display: flex;
+    gap: 30px;
+}
+
+.til {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adresNav {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.navSec {
+    border: none;
+    color: #FFFFFF;
+    outline: none;
+    background-color: transparent;
+}
+
+.navSec option {
+    color: black;
+}
