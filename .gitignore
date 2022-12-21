@@ -131,3 +131,5 @@ dmypy.json
 migrations
 staticfiles
 media
+
+node_modules

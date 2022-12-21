@@ -2,6 +2,11 @@ from django.shortcuts import render
 from apps.store.models import Product
 from apps.store.models import BannerHome, TanilganBrendlar, FooterPayBrands
 
+
+def index(request):
+    return render(request, 'index.html')
+
+
 def frontpage(request):
     products = Product.objects.all()
     is_featured_products = Product.objects.filter(is_featured=True)
@@ -21,11 +26,10 @@ def frontpage(request):
         'brand_image': brand_image,
         'popular_products': popular_products,
         'recently_viewed_products': recently_viewed_products,
-        
+
     }
 
     return render(request, 'frontpage.html', context)
-
 
 
 def contact(request):
