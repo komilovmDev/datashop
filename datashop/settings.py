@@ -61,7 +61,10 @@ INSTALLED_APPS = [
     'apps.order',
     'apps.store',
     'apps.tgbot',
-    'apps.account',
+
+    'apps.auth',
+    
+    'rest_framework',
 
 ]
 
@@ -183,3 +186,14 @@ CKEDITOR_RESTRICT_BY_USER = True
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
 REDIS_DB = 1
+
+# Rest Framework
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
