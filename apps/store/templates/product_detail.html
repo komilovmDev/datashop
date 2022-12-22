@@ -39,16 +39,18 @@
 
                             <div class="brator-product-header-layout-img">
                                 <div class="brator-product-img-tab-list js-tabs" id="tabs-product-img">
-                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /></div>
-                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/product-tab-img-02.jpeg" alt="alt" /></div>
-                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/product-tab-img-03.jpeg" alt="alt" /></div>
-                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="./assets/images/product-tab-img-04.jpeg" alt="alt" /></div>
+
+                                    <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ product.image.url }}"  alt="alt" /></div>
+                                    {% for photo in photos %}
+                                        <div class="js-tabs__content brator-product-img-tab-item"><img data-action="zoom" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="{{ photo.images.url }}" alt="alt" /></div>
+                                    {% endfor %}
+
                                     <div class="brator-product-img-tab-header js-tabs__header">
                                         <ul>
-                                            <li><a class="js-tabs__title lazyload" href="#" data-bg="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}"></a></li>
+                                            {% comment %} <li><a class="js-tabs__title lazyload" href="#" data-bg="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}"></a></li> {% endcomment %}
                                             {% for photo in photos %}
-                                                <li><a class="js-tabs__title lazyload" href="#" data-bg="{{ photo.image.url }}"></a></li>
-                                            {% endfor %}
+                                                <li><a class="js-tabs__title lazyload" href="#" data-bg="{{ photo.images.url }}"></a></li>
+                                            {% endfor %} 
                                             {% comment %} <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-03.jpeg"></a></li>
                                             <li><a class="js-tabs__title lazyload" href="#" data-bg="assets/images/product-tab-img-04.jpeg"></a></li> {% endcomment %}
                                         </ul>
@@ -64,7 +66,7 @@
                                             <h2>{{ product.title }}</h2>
                                         </div>
                                         <div class="brator-product-hero-content-review">
-                                            <div class="product-batch off-batch">new</div>
+                                            <div class="product-batch off-batch">Yangi</div>
                                             <div class="brator-review-product">
                                                 <div class="brator-review">
                                                     <svg class="active" fill="#000000" width="52" height="52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
@@ -139,12 +141,12 @@
                                 </div>
                                 <div class="brator-product-add-to-cart">
                                     <div class="brator-product-add-to-cart-price">
-                                        <h6><span class="sale">{{ product.price|floatformat:0|intcomma }}so'm</span></h6>
+                                        <h6><span class="sale">${{ product.price|floatformat:0|intcomma }}</span></h6>
                                         <h7><span>без НДС</span></h7>
                                     </div>
-                                    <div class="brator-product-add-to-cart-color">
+                                    {% comment %} <div class="brator-product-add-to-cart-color">
                                         <span>Black/Red</span>
-                                    </div>
+                                    </div> {% endcomment %}
                                     {% comment %} <div class="brator-product-add-to-cart-color-checkbox">
                                         <div class="brator-product-add-to-cart-color-checkbox-single red">
                                             <input type="checkbox" name="condcion" />
@@ -310,7 +312,7 @@
                                             </div> {% endcomment %}
                                         </div>
                                         <div class="brator-product-single-item-price">
-                                            <p><sub>{{ p.price }}so'm</sub></p>
+                                            <p><sub>${{ p.price }}</sub></p>
                                         </div>
                                         <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Savatga Qoshish</a></div>
                                     </div>

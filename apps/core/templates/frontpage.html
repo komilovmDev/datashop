@@ -23,9 +23,9 @@
                                 {% for banner in banner_image %}
                                     <div class="brator-megasell-box  design-one splide__slide">
                                         <div class="brator-megasell-content-box">
-                                            <span class="sub-title"></span>
+                                            {% comment %} <span class="sub-title"></span> {% endcomment %}
                                             <h1 class="title">${{ banner.foyiz }}</h1>
-                                            <h4 class="title">{{ banner.title }}<span>Shoshiling!</span></h4>
+                                            <h4 class="title">{{ banner.title }}<span></span></h4>
                                             {{ banner.title_des| safe }}
                                         </div>
                                         <div class="brator-megasell-thumb">
@@ -233,13 +233,9 @@
                     <div class="brator-best-seller-section-header-area">
                         <div class="brator-section-header all-item-left">
                             <div class="brator-section-header-title">
-                                <h2>💛 Bestseller</h2>
+                                <h3>💛Bestseller</h3>
                             </div>
-                            <a href="#_">Barchasini korish
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
-                                </svg>
-                            </a>
+                            
                         </div>
                         <div class="brator-best-seller-sub-filter-area">
                             <ul class="brator-best-seller-sub-filter-content">
@@ -436,7 +432,7 @@
                                                 </div>
                                             </div>
                                             <div class="brator-product-single-item-price">
-                                                <p class="brator-price-black-text"><sub>{{ product.price }}so'm</sub></p>
+                                                <p class="brator-price-black-text"><sub>${{ product.price }}</sub></p>
                                             </div>
                                             <div class="brator-product-single-item-btn"><a href="{% url 'product_detail' product.category.slug product.slug %}">Batafsil</a></div>
                                         </div>
@@ -491,7 +487,7 @@
                                                 </div>
                                             </div>
                                             <div class="brator-product-single-item-price">
-                                                <p class="brator-price-black-text"><sub>{{ product.price }}so'm</sub></p>
+                                                <p class="brator-price-black-text"><sub>${{ product.price }}</sub></p>
                                             </div>
                                             <div class="brator-product-single-item-btn"><a href="{% url 'product_detail' product.category.slug product.slug %}">Batafsil</a></div>
                                         </div>

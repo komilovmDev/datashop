@@ -3,9 +3,19 @@ import random
 from .models import Category, Product
 
 def menu_categories(request):
-    categories = Category.objects.all()
+    categories = Category.objects.filter(parent=None)
+    cat_4 = Category.objects.filter(parent=None)[:4]
+    menu_4_8 = Category.objects.filter(parent=None)[4:8]
+    four_to_8_12_cat = Category.objects.filter(parent=None)[8:12]
 
-    return {'menu_categories': categories}
+    context = {
+        'cat_4': cat_4,
+        'menu_categories': categories,
+        'menu_4_8': menu_4_8,
+        'four_to_8_12_cat': four_to_8_12_cat,
+    }
+
+    return context
 
 
 # def req_product(request):

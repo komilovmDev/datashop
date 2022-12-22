@@ -587,7 +587,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="brator-product-single-item-price">
-                                                    <p><sub>{{ product.price }}so'm</sub></p>
+                                                    <p><sub>${{ product.price }}so'm</sub></p>
                                                 </div>
                                                 <div class="brator-product-single-item-btn"><a href="#" @click="addToCart({{ product.id }})">Add to cart</a></div>
                                             </div>
@@ -643,7 +643,7 @@
                             <div class="brator-product-single-item-area design-two">
                                 <div class="brator-product-single-item-info info-content-left">
                                     <div class="brator-product-single-item-info-left">
-                                        <div class="yollow-batch">New</div>
+                                        <div class="yollow-batch">Yangi</div>
                                     </div>
                                 </div>
                                 <div class="brator-product-single-item-img"><a href="{% url 'product_detail' product.category.slug product.slug %}"><img class="lazyload" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}"  data-src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/noimage.png" %}{% endif %}" alt="alt" /></a></div>
@@ -675,9 +675,9 @@
                                         </div>
                                     </div>
                                     <div class="brator-product-single-item-price">
-                                        <p><sub>{{ product.price }}so'm</sub><b class="pub"></b></p>
+                                        <p><sub>${{ product.price }}</sub><b class="pub"></b></p>
                                     </div>
-                                    <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Add to cart</a>
+                                    <div class="brator-product-single-item-btn"><a href="product-layout-01.html">Batafsil</a>
                                         <!-- a(href="product-layout-01.html") #{cat}-->
                                     </div>
                                 </div>
