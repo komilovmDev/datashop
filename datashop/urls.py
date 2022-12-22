@@ -19,22 +19,35 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 
+# rest api imports
+from reviews.views import ProductViewSet, ImageViewSet
+from rest_framework.routers import DefaultRouter
+
+
 from apps.cart.views import cart_detail
-from apps.core.views import frontpage, contact, about, login, auth
+from apps.core.views import frontpage, contact, about, index
 from apps.store.views import product_detail, category_detail, product_list, product_list_colm, search
 
 from apps.store.api import api_add_to_cart, api_remove_from_cart, api_checkout
 
+# rest routers
+
+router = DefaultRouter()
+router.register(r'product', ProductViewSet, basename='Product')
+router.register(r'image', ImageViewSet, basename='Image')
+
+
 urlpatterns = [
-    path('', frontpage, name='frontpage'),
+    path('', index, name='frontpage'),
     path('search/', search, name='search'),
     path('cart/', cart_detail, name='cart'),
     path('contact/', contact, name='contact'),
     path('about/', about, name='about'),
-    path('login/', login, name='login'),
-    path('auth/', auth, name='auth'),
+    # path('account/', include('auth.urls')),
+    path('auth/', include('auth.urls')),
     path('yangi-mahsulotlar/', product_list, name='product_list'),
     path('yangi-mahsulotlar-colm/', product_list_colm, name='product_list_colm'),
+    path('frontpage/', frontpage, name='frontpage'),
     path('admin/', admin.site.urls),
 
     # API
@@ -51,4 +64,7 @@ urlpatterns = [
 
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

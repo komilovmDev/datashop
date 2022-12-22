@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["datashop.uz", "www.datashop.uz", ".datashop.uz", "localhost", "127.0.0.1"]
 
@@ -61,7 +61,10 @@ INSTALLED_APPS = [
     'apps.order',
     'apps.store',
     'apps.tgbot',
-    'apps.account',
+
+    'apps.auth',
+    
+    'rest_framework',
 
 ]
 
@@ -80,7 +83,9 @@ ROOT_URLCONF = 'datashop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'frontend/build'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -155,7 +160,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / "frontend/build/static"
 ]
 
 MEDIA_URL = 'media/'
@@ -181,3 +186,14 @@ CKEDITOR_RESTRICT_BY_USER = True
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
 REDIS_DB = 1
+
+# Rest Framework
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}

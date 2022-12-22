@@ -15,6 +15,13 @@ body {
 
 .container {
     margin: auto;
+<<<<<<< HEAD
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+=======
     width: 1440px;
     display: flex;
     align-items: center;
@@ -34,3 +41,4 @@ body {
   ::-webkit-scrollbar-thumb {
     background: red; 
   }
+>>>>>>> 6ec0466b403154492d5e3590b043feb761ba976d
