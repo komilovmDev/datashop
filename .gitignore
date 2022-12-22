@@ -130,4 +130,9 @@ dmypy.json
 
 migrations
 staticfiles
-media
+
+
+node_modules
+
+*.rar
+*.zip
